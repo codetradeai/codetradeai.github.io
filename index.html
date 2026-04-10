@@ -124,6 +124,13 @@
             margin-bottom: 32px;
             border: 4px solid var(--bg-color);
             box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .profile-img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 14px 30px -5px rgba(0, 0, 0, 0.15), 0 10px 14px -6px rgba(0, 0, 0, 0.12);
         }
 
         h1 {
@@ -347,7 +354,7 @@
 
     <div class="layout">
         <aside class="sidebar">
-            <img src="image_jt.jpg" alt="João Tomás Venâncio" class="profile-img">
+            <img id="profile-photo" src="image_jt.jpg" alt="João Tomás Venâncio" class="profile-img">
 
             <h1>João Tomás M. Venâncio</h1>
             <h2 class="title">AI & Automation | Data Science<br>Gestão de Negócios & CS</h2>
@@ -550,13 +557,17 @@
                 <h3 class="section-title">Formação Acadêmica</h3>
                 <div class="item">
                     <ul class="item-list">
-                        <li><strong>MBA em Data Science e Analytics</strong> — USP / ESALQ (400h)</li>
-                        <li><strong>MBA Broker Global / InfoMoney</strong> — IBMEC (420h)</li>
-                        <li><strong>Bacharel em Administração</strong> — Universidade Católica Dom Bosco (UCDB)</li>
-                        <li><strong>Pós-Graduação em Direito</strong> — Foco em Processo Civil (em curso)</li>
-                        <li><strong>Curso de Economia</strong> — UFMS (Incompleto - 4º Semestre)</li>
-                        <li><strong>Oficial da Reserva (Arma de Cavalaria)</strong> — NPOR / 20º RCB</li>
-                        <li><strong>Técnico em Mecânica</strong> — IFMS (Incompleto)</li>
+                        <li><strong>Análise e Desenvolvimento de Sistemas (ADS), Engenharia de Software</strong> &mdash; Estácio (2025 – 2028)</li>
+                        <li><strong>Gestão de Projetos</strong> &mdash; Escola DNC (2025)</li>
+                        <li><strong>Formação em Dados e Ciência de Dados</strong> &mdash; Trading com Dados (2024 – 2026)</li>
+                        <li><strong>Formação em Gerente de Dados</strong> &mdash; Escola DNC (2022 – 2023)</li>
+                        <li><strong>MBA em Data Science e Analytics</strong> &mdash; USP / ESALQ (400h)</li>
+                        <li><strong>MBA Broker Global / InfoMoney</strong> &mdash; IBMEC (420h)</li>
+                        <li><strong>Bacharel em Administração</strong> &mdash; Universidade Católica Dom Bosco (UCDB)</li>
+                        <li><strong>Pós-Graduação em Direito</strong> &mdash; Foco em Processo Civil (em curso)</li>
+                        <li><strong>Curso de Economia</strong> &mdash; UFMS (Incompleto – 4º Semestre)</li>
+                        <li><strong>Oficial da Reserva (Arma de Cavalaria)</strong> &mdash; NPOR / 20º RCB</li>
+                        <li><strong>Técnico em Mecânica</strong> &mdash; IFMS (Incompleto)</li>
                     </ul>
                 </div>
             </section>
@@ -566,8 +577,7 @@
                 <div class="skills-container">
                     <div class="skill-group">
                         <h4>Tecnologia e Dados</h4>
-                        <p>Formação em Dados (DNC - 520h), Python Pandas & Estatística (Alura), Formação Data Science &
-                            ML (Alura/DNC), Power BI Avançado & GA4 (Linkedin Learning/DNC).</p>
+                        <p>Formação em Dados (DNC – 520h), Python Pandas &amp; Estatística (Alura), Formação Data Science &amp; ML (Alura/DNC), Power BI Avançado &amp; GA4 (Linkedin Learning/DNC), Técnicas Avançadas de Power BI, Fundamentos do Big Data, Fundamentos da Ciência de Dados, Princípios de Arquitetura de Software.</p>
                     </div>
                     <div class="skill-group">
                         <h4>Mercado e Finanças</h4>
@@ -593,6 +603,7 @@
 
     <script>
         const themeToggleBtn = document.getElementById('theme-toggle');
+        const profilePhoto = document.getElementById('profile-photo');
         
         themeToggleBtn.addEventListener('click', () => {
             let theme = document.documentElement.getAttribute('data-theme');
@@ -605,6 +616,14 @@
             }
             localStorage.setItem('theme', switchToTheme);
         });
+
+        // Clique na foto alterna entre as duas imagens
+        if (profilePhoto) {
+            profilePhoto.addEventListener('click', () => {
+                const isDefault = profilePhoto.src.includes('image_jt.jpg');
+                profilePhoto.src = isDefault ? 'image_jt_2.JPG' : 'image_jt.jpg';
+            });
+        }
     </script>
 </body>
 

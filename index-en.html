@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>João Tomás Venâncio | Portfólio</title>
+    <title>João Tomás Venâncio | Portfolio</title>
+    <meta name="description" content="Portfolio of João Tomás Venâncio — AI, Data Science, Automation and Business Strategy.">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
@@ -16,6 +17,7 @@
             --border-dark: #e5e7eb;
             --accent: #111827;
         }
+
         [data-theme="dark"] {
             --bg-color: #111827;
             --text-main: #f9fafb;
@@ -24,11 +26,9 @@
             --border-dark: #374151;
             --accent: #f9fafb;
         }
+
         [data-theme="dark"] .icon-moon { display: none; }
         :root:not([data-theme="dark"]) .icon-sun { display: none; }
-
-
-        
 
         * {
             box-sizing: border-box;
@@ -43,10 +43,9 @@
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
             transition: background-color 0.3s ease, color 0.3s ease;
-            
         }
 
-        /* Botões Flutuantes (Controles) */
+        /* Floating Controls */
         .controls-container {
             position: fixed;
             top: 24px;
@@ -71,7 +70,6 @@
             background-color: var(--bg-color);
             text-decoration: none;
             font-size: 18px;
-            /* Para a bandeira */
         }
 
         .control-btn:hover {
@@ -86,15 +84,10 @@
             fill: currentColor;
         }
 
-        [data-theme="dark"] .icon-moon {
-            display: none;
-        }
+        [data-theme="dark"] .icon-moon { display: none; }
+        :root:not([data-theme="dark"]) .icon-sun { display: none; }
 
-        :root:not([data-theme="dark"]) .icon-sun {
-            display: none;
-        }
-
-        /* Layout Principal dividido em duas colunas */
+        /* Main Layout */
         .layout {
             display: flex;
             max-width: 1200px;
@@ -102,7 +95,7 @@
             min-height: 100vh;
         }
 
-        /* Barra Lateral Fixa (Esquerda) */
+        /* Left Sidebar */
         .sidebar {
             width: 35%;
             padding: 80px 40px 60px 40px;
@@ -124,6 +117,13 @@
             margin-bottom: 32px;
             border: 4px solid var(--bg-color);
             box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .profile-img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 14px 30px -5px rgba(0, 0, 0, 0.15), 0 10px 14px -6px rgba(0, 0, 0, 0.12);
         }
 
         h1 {
@@ -165,7 +165,6 @@
             color: var(--accent);
         }
 
-        /* Ícones em SVG simples */
         .icon {
             width: 18px;
             height: 18px;
@@ -173,7 +172,7 @@
             opacity: 0.7;
         }
 
-        /* Área de Conteúdo (Direita) */
+        /* Right Content Area */
         .main-content {
             width: 65%;
             padding: 80px 80px 100px 80px;
@@ -274,7 +273,7 @@
             line-height: 1.6;
         }
 
-        /* Responsividade para Celulares e Tablets */
+        /* Tablet */
         @media (max-width: 992px) {
             .sidebar {
                 width: 40%;
@@ -286,6 +285,7 @@
             }
         }
 
+        /* Mobile */
         @media (max-width: 768px) {
             .layout {
                 flex-direction: column;
@@ -301,7 +301,6 @@
                 width: 100%;
                 position: static;
                 padding: 80px 20px 40px 20px;
-                /* Mais padding no topo para afastar dos botões */
                 border-right: none;
                 border-bottom: 1px solid var(--border-dark);
                 text-align: center;
@@ -321,7 +320,6 @@
             }
         }
     </style>
-    
 
     <script>
         const savedTheme = localStorage.getItem('theme');
@@ -334,57 +332,50 @@
 <body>
 
     <div class="controls-container">
-        <a href="index.html" class="control-btn" aria-label="Mudar para o Português" title="Versão em Português">
-        🇧🇷
-    </a>
-    <button id="theme-toggle" class="control-btn" aria-label="Alternar tema">
-        <svg class="icon-sun" viewBox="0 0 24 24"><path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0 .39-.39.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0 .39-.39.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41.39.39 1.03.39 1.41 0l1.06-1.06zM7.05 18.36c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41.39.39 1.03.39 1.41 0l1.06-1.06z"/></svg>
-        <svg class="icon-moon" viewBox="0 0 24 24"><path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-3.03 0-5.5-2.47-5.5-5.5 0-1.82.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z"/></svg>
-    </button>
-
-        
+        <a href="index.html" class="control-btn" aria-label="Switch to Portuguese" title="Versão em Português">
+            🇧🇷
+        </a>
+        <button id="theme-toggle" class="control-btn" aria-label="Toggle theme">
+            <svg class="icon-sun" viewBox="0 0 24 24"><path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0 .39-.39.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0 .39-.39.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41.39.39 1.03.39 1.41 0l1.06-1.06zM7.05 18.36c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41.39.39 1.03.39 1.41 0l1.06-1.06z"/></svg>
+            <svg class="icon-moon" viewBox="0 0 24 24"><path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-3.03 0-5.5-2.47-5.5-5.5 0-1.82.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z"/></svg>
+        </button>
     </div>
 
     <div class="layout">
         <aside class="sidebar">
-            <img src="image_jt.jpg" alt="João Tomás Venâncio" class="profile-img">
+            <img id="profile-photo" src="image_jt.jpg" alt="João Tomás Venâncio" class="profile-img">
 
             <h1>João Tomás M. Venâncio</h1>
-            <h2 class="title">AI & Automation | Data Science<br>Business Management & CS</h2>
+            <h2 class="title">AI &amp; Automation | Data Science<br>Business Management &amp; CS</h2>
 
             <div class="contact-links">
                 <span>
                     <svg class="icon" viewBox="0 0 24 24">
-                        <path
-                            d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
                     </svg>
-                    Campo Grande, MS
+                    Campo Grande, MS — Brazil
                 </span>
                 <a href="mailto:joaotomasvenancio@gmail.com">
                     <svg class="icon" viewBox="0 0 24 24">
-                        <path
-                            d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
                     </svg>
                     joaotomasvenancio@gmail.com
                 </a>
                 <span>
                     <svg class="icon" viewBox="0 0 24 24">
-                        <path
-                            d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z" />
+                        <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z" />
                     </svg>
                     (67) 99226-5673
                 </span>
                 <a href="https://www.linkedin.com/in/joao-tomas-martins-venancio/" target="_blank">
                     <svg class="icon" viewBox="0 0 24 24">
-                        <path
-                            d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" />
+                        <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" />
                     </svg>
                     LinkedIn
                 </a>
                 <a href="https://github.com/codetradeai" target="_blank">
                     <svg class="icon" viewBox="0 0 24 24">
-                        <path
-                            d="M12 2A10 10 0 0 0 8.84 21.5c.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.45-1.15-1.11-1.46-1.11-1.46-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z" />
+                        <path d="M12 2A10 10 0 0 0 8.84 21.5c.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.45-1.15-1.11-1.46-1.11-1.46-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z" />
                     </svg>
                     GitHub
                 </a>
@@ -395,7 +386,7 @@
 
             <section>
                 <h3 class="section-title">Professional Summary</h3>
-                <p class="summary">Born and raised in Campo Grande (MS), I act as Founder of C&T.AI (Codetrade Intelligence, Systems and Technology), building SaaS products, AI agents, and end-to-end data solutions for companies operating in highly demanding analytical environments. I hold a Bachelor's degree in Business Administration (UCDB), with MBAs in Global Broker (IBMEC) and Data Science & Analytics (USP-ESALQ), CPA-10 certification, and complementary training in leadership, data, and product — with PMP, SSM, and Lean Six Sigma Green Belt in progress. My career combines business, sales, financial markets, automation, and legal tech. At Nelogica, I worked in Customer Success and Growth, focusing on the strategy automation module, supporting traders, and expanding the user base. At CM Capital, I was a DMA Analyst, close to variable income operations and the needs of investor clients. At Cubo Analítica, I acted as a Business Partner on data and analytics projects. At Ernesto Borges Advogados, I led Data, AI & Automation initiatives within the Legal Operations division — process mapping, LLM implementation, Python automation, and KPI governance in Azure DevOps. Concurrently, I led independent legal tech projects, including RAG systems in production. As founder of C&T.AI, I design and implement AI agents, data pipelines, and analytics platforms — with deliveries such as an Insights system (SaaS for market analysis) and WhatsApp AI agents for sales and support. My performance merges product vision with technical depth: I understand the business pain, translate it into data architecture, automation, and machine learning models, and closely track metrics and results. The accumulated experience with traders, investors, and SMEs helps me build truly usable solutions — not just technically correct ones. I served as a Reserve Officer in the Cavalry (20th RCB – NPOR / Brazilian Army), an experience that consolidated discipline, leadership under pressure, and decision-making in uncertain scenarios — competencies I directly apply in high-responsibility data, AI, and finance projects. Today, my focus is helping companies and professionals leverage AI, data, and automation to make better decisions, scale operations, and compete in increasingly competitive and quantitative markets.</p>
+                <p class="summary">Born and raised in Campo Grande (MS), I act as Founder of C&amp;T.AI (Codetrade Intelligence, Systems and Technology), building SaaS products, AI agents, and end-to-end data solutions for companies operating in highly demanding analytical environments. I hold a Bachelor's degree in Business Administration (UCDB), with MBAs in Global Broker (IBMEC) and Data Science &amp; Analytics (USP-ESALQ), CPA-10 certification, and complementary training in leadership, data, and product &mdash; with PMP, SSM, and Lean Six Sigma Green Belt in progress. My career combines business, sales, financial markets, automation, and legal tech. At Nelogica, I worked in Customer Success and Growth, focusing on the strategy automation module, supporting traders, and expanding the user base. At CM Capital, I was a DMA Analyst, close to variable income operations and investor client needs. At Cubo Analítica, I acted as a Business Partner on data and analytics projects. At Ernesto Borges Advogados, I led Data, AI &amp; Automation initiatives within the Legal Operations division &mdash; process mapping, LLM implementation, Python automation, and KPI governance in Azure DevOps. Concurrently, I led independent legal tech projects, including RAG systems in production. As founder of C&amp;T.AI, I design and implement AI agents, data pipelines, and analytics platforms &mdash; with deliveries such as an Insights system (SaaS for market analysis) and WhatsApp AI agents for sales and support. My work merges product vision with technical depth: I understand business pain points, translate them into data architecture, automation, and machine learning models, and closely track metrics and results. Accumulated experience with traders, investors, and SMEs helps me build truly usable solutions &mdash; not just technically correct ones. I served as a Reserve Officer in the Cavalry (20th RCB &ndash; NPOR / Brazilian Army), consolidating discipline, leadership under pressure, and decision-making in uncertain scenarios &mdash; competencies I apply directly in high-responsibility data, AI, and finance projects. Today, my focus is helping companies and professionals leverage AI, data, and automation to make better decisions, scale operations, and compete in increasingly competitive and quantitative markets.</p>
             </section>
 
             <section>
@@ -403,45 +394,42 @@
 
                 <div class="item">
                     <div class="item-header">
-                        <span class="item-title">Data, AI & Automation | Operations Directorate</span>
-                        <span class="item-date">Abr/2025 – Atual</span>
+                        <span class="item-title">Data, AI &amp; Automation | Legal Operations Division</span>
+                        <span class="item-date">Apr/2025 – Dec/2025</span>
                     </div>
                     <div class="item-subtitle">Ernesto Borges Advogados</div>
                     <ul class="item-list">
-                        <li><strong>Process Mapping and Redesign: Led the optimization of critical operational workflows (such as post-registration, hearing minutes, and signatures), driving scalability through RPA and AI.</li>
-                        <li><strong>AI Innovation: Designed organic architectures using LLMs (prompt engineering) combined with automations for document classification and strategic extraction, actively improving core solutions like the Legal RAG and MEMOCALC./em>.
-                        </li>
-                        <li><strong>Gestão Ágil e Stakeholders (Legal Ops):</strong> Interlocução entre operação,
-                            vendors parceiros e squads de tecnologia. Coordenação e execução sob métricas ágeis (Azure
-                            DevOps) para conectar necessidades jurídicas a robustecimentos de banco de dados e
-                            infraestrutura.</li>
-                        <li><strong>Strategy, Culture, and Governance: Established performance pipelines driven by efficiency metrics (KPIs, BI dashboards) and focused on Value vs. Effort and ROI matrices, fostering a culture of automated innovation (Legal Tech).</li>
+                        <li><strong>Process Mapping and Automation Design:</strong> Led the mapping and redesign of critical legal operational workflows (post-registration, hearing minutes, and legal publications), focusing on scalability through RPA and artificial intelligence.</li>
+                        <li><strong>AI Implementation and Automated Workflows:</strong> Designed solutions using LLMs (Large Language Models), prompt engineering, and Power Automate for document classification, data enrichment, and automated extraction of procedural information.</li>
+                        <li><strong>Operational Stakeholder Management:</strong> Acted strategically alongside the Legal Operations Division to align technical scope and legal needs, bridging communication between vendors, technical squads, and internal departments.</li>
+                        <li><strong>Agile Project Coordination:</strong> Structured backlogs, epics, and sprints in Azure DevOps; coordinated deliveries across Legal, Data, IT, and Infrastructure teams.</li>
+                        <li><strong>BI and KPI Governance:</strong> Defined KPIs to measure efficiency, coverage, and automation impact, proposing operational dashboards for traceability and informed decision-making.</li>
+                        <li><strong>Legal Tech Culture Enablement:</strong> Promoted a data- and automation-driven culture, encouraging experimentation and the use of low-code tools.</li>
+                        <li><strong>Strategic Prioritization and ROI:</strong> Applied value vs. effort prioritization models and ROI estimations to drive high-impact project decisions.</li>
+                        <li><strong>Documentation and Scalability:</strong> Standardized workflows and documentation governance to ensure consistency, scalability, and knowledge transfer within the operation.</li>
                     </ul>
                 </div>
 
                 <div class="item">
                     <div class="item-header">
                         <span class="item-title">Business Partner</span>
-                        <span class="item-date">Nov/2024 – Atual</span>
+                        <span class="item-date">Nov/2024 – Dec/2025</span>
                     </div>
                     <div class="item-subtitle">Cubo Analítica</div>
                     <ul class="item-list">
-                        <li>Led strategic partnerships and consulting projects focused on data and analytics.
-                        </li>
+                        <li>Led strategic partnerships and consulting projects focused on data and analytics.</li>
                     </ul>
                 </div>
 
                 <div class="item">
                     <div class="item-header">
-                        <span class="item-title">Founder & CEO</span>
-                        <span class="item-date">Nov/2024 – Atual</span>
+                        <span class="item-title">Founder &amp; CEO</span>
+                        <span class="item-date">Nov/2024 – Present</span>
                     </div>
-                    <div class="item-subtitle">C&T.AI — CODETRADE INTELIGÊNCIA</div>
+                    <div class="item-subtitle">C&amp;T.AI — CODETRADE INTELLIGENCE</div>
                     <ul class="item-list">
-                        <li>Fundação e operação de consultoria especializada em IA aplicada e automação de processos
-                            voltada a PMEs e Startups.</li>
-                        <li>Developed and delivered conversational AI agents for WhatsApp integrated with CRMs.
-                        </li>
+                        <li>Founded and operated a consulting firm specialized in applied AI and process automation for SMEs and Startups.</li>
+                        <li>Developed and delivered conversational AI agents for WhatsApp integrated with CRMs.</li>
                         <li>Implemented autonomous SDR Agents for lead qualification using n8n workflows.</li>
                     </ul>
                 </div>
@@ -449,42 +437,41 @@
                 <div class="item">
                     <div class="item-header">
                         <span class="item-title">Direct Market Access (DMA) Analyst</span>
-                        <span class="item-date">Jul/2024 – Out/2024</span>
+                        <span class="item-date">Jul/2024 – Oct/2024</span>
                     </div>
                     <div class="item-subtitle">CM Capital</div>
                     <ul class="item-list">
-                        <li>Development e integração de automações de estratégias de negociação algorítmica para o
-                            mercado financeiro.</li>
+                        <li>Focused on creating solutions that optimize clients' investment performance.</li>
+                        <li>Developed and integrated algorithmic trading strategy automations for the financial market.</li>
                     </ul>
                 </div>
 
                 <div class="item">
                     <div class="item-header">
                         <span class="item-title">Customer Success Analyst II → Leader Beta Pipeline</span>
-                        <span class="item-date">Jan/2023 – Mai/2024</span>
+                        <span class="item-date">Jan/2023 – May/2024</span>
                     </div>
                     <div class="item-subtitle">Nelogica Sistemas de Software LTDA</div>
                     <ul class="item-list">
-                        <li><strong>Estratégia de Crescimento e Expansão (Growth & LTV):</strong> Liderança na
-                            estruturação e execução de campanhas multicanal (E-mail, WhatsApp) e ações de
-                            Cross-Sell/Up-Sell baseadas em dados. A estratégia de segmentação impulsionou o crescimento
-                            em 4x da base do módulo de robôs, atingindo 7.140 traders ativos, além de reativar
-                            fortemente a base inativa.</li>
-                        <li><strong>Engagement, Content & Community Building: Created and technically hosted live training and major events (educational lives). Produced content journeys that culminated in founding Nelogica's official automation community, scaling it to over 40,000 members and +80k views.</li>
-                        <li><strong>Institutional Stakeholder Management (B2B): Built high-level strategic relationships with key business partners, brokers, institutional accounts, and white-label projects, jointly driving partnerships for base expansion.</li>
-                        <li><strong>Multidisciplinary Coordination & Commercial Intelligence: Continuously monitored results (Data Analysis) and articulated operational sprints alongside Commercial Intelligence, Partnerships, Sales, and Marketing teams, ensuring flawless go-to-market execution.</li>
+                        <li><strong>Growth &amp; Expansion Strategy (Growth &amp; LTV):</strong> Led the structuring and execution of multi-channel campaigns (Email, WhatsApp) and data-driven Cross-Sell/Up-Sell actions. The segmentation strategy boosted the robot module's user base by 4x, reaching 7,140 active traders, while powerfully reactivating the inactive base.</li>
+                        <li><strong>Engagement, Content &amp; Community Building:</strong> Created and technically hosted live training and major events (educational lives). Produced content journeys that culminated in founding Nelogica's official automation community, scaling it to over 40,000 members and +80k views.</li>
+                        <li><strong>Institutional Stakeholder Management (B2B):</strong> Built high-level strategic relationships with key business partners, brokers, institutional accounts, and white-label projects, jointly driving partnerships for base expansion.</li>
+                        <li><strong>Multidisciplinary Coordination &amp; Commercial Intelligence:</strong> Continuously monitored results (Data Analysis) and articulated operational sprints alongside Commercial Intelligence, Partnerships, Sales, and Marketing teams, ensuring flawless go-to-market execution.</li>
+                        <li><strong>Inactive Client Recovery and Reactivation:</strong> Implemented campaigns to recover inactive clients by offering incentives and discounts to encourage reactivation and retention.</li>
+                        <li><strong>Cross-Sell and Up-Sell Optimization:</strong> Developed and executed cross-sell and up-sell strategies to increase adherence to superior plans and maximize customer lifetime value (LTV).</li>
                     </ul>
                 </div>
 
                 <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 24px; line-height: 1.6;">
-                    <strong>Consolidated Previous Experience: Consistent customer-focused performance, institutional relationship building, B2B/B2C sales, and management through roles as Relationship Assistant Level III (Nelogica, 2021-2022); Corporate Assistant and Teller (Sicoob, 2021; Uniprime, 2019); Apple B2B Specialist (iPlace, 2020); alongside an early career foundation as Managing Partner of a Cosmetics Industry (Ana Mattos / Ybá Cosméticos, 2015-2017) and Reserve Officer Aspirant (Brazilian Army / NPOR, 2014).</p>
+                    <strong>Consolidated Previous Experience:</strong> Consistent customer-focused performance, institutional relationship building, B2B/B2C sales, and management through roles as Relationship Assistant Level III (Nelogica, 2021-2022); Corporate Assistant and Teller (Sicoob, 2021; Uniprime, 2019); Apple B2B Specialist (iPlace, 2020); Autonomous Trader in Variable Income / Futures (B3, 2017-2021); alongside an early career foundation as Managing Partner of a Cosmetics Industry (Ana Mattos / Ybá Cosméticos, 2015-2017) and Reserve Officer Aspirant — Cavalry Branch (Brazilian Army / NPOR / 20th RCB, 2014).
+                </p>
             </section>
 
             <section>
                 <h3 class="section-title">Featured Projects</h3>
                 <div class="item">
                     <ul class="item-list">
-                        <li><strong>Sherlock Stock (Insights):</strong> SaaS tool for B3 asset and market analysis. Features real-time financial API integration, developing a "moat" through personalized user memory and functions built in React/TypeScript, Supabase, and n8n.</li>
+                        <li><strong>Sherlock Stock (Insights):</strong> SaaS tool for B3 asset and market analysis. Real-time financial API integration, developing a "moat" through personalized user memory and functions built in React/TypeScript, Supabase, and n8n.</li>
                         <li><strong>Foco (Personal Development App):</strong> Conception, database architecture, and UI/UX design for an app focused on high-performance mindset techniques for the user (Agent).</li>
                         <li><strong>Legal RAG (Ernesto Borges):</strong> Retrieval-Augmented Generation system over thousands of internal documents, featuring ingestion, chunking, and semantic retrieval using Pinecone and OpenAI.</li>
                         <li><strong>WhatsApp AI Sales Agents:</strong> Autonomous AI agents for lead qualification integrated with n8n, Z-API, OpenAI, and CRMs, actively operating as SDRs.</li>
@@ -496,23 +483,20 @@
                 <h3 class="section-title">Skills and Tools</h3>
                 <div class="skills-container">
                     <div class="skill-group">
-                        <h4>AI & Automation</h4>
-                        <p>n8n, LangChain, LangGraph, OpenAI API, Claude API, RAG Pipelines, Prompt Engineering,
-                            Pinecone, Supabase Vector.</p>
+                        <h4>AI &amp; Automation</h4>
+                        <p>n8n, LangChain, LangGraph, OpenAI API, Claude API, RAG Pipelines, Prompt Engineering, Pinecone, Supabase Vector.</p>
                     </div>
                     <div class="skill-group">
                         <h4>Development</h4>
-                        <p>Python, TypeScript, React, Node.js, SQL, PostgreSQL, REST APIs, Power Automate, C# (DLLs),
-                            Docker.</p>
+                        <p>Python, TypeScript, React, Node.js, SQL, PostgreSQL, REST APIs, Power Automate, C# (DLLs), Docker.</p>
                     </div>
                     <div class="skill-group">
-                        <h4>Data & Analytics</h4>
-                        <p>Power BI, Pandas, Machine Learning, Scikit-learn, BRAPI, B3 Market Data.</p>
+                        <h4>Data &amp; Analytics</h4>
+                        <p>Data Team Leadership, Data Engineering, Predictive Analysis, Power BI, Pandas, Machine Learning, Scikit-learn, BRAPI, B3 Market Data.</p>
                     </div>
                     <div class="skill-group">
-                        <h4>Fintech & Product</h4>
-                        <p>Systematic Trading (Nelogica/Profit), NTSL, DMA, Metodologias Ágeis (Scrum), Azure DevOps,
-                            Product Owner.</p>
+                        <h4>Fintech &amp; Product</h4>
+                        <p>Systematic Trading (Nelogica/Profit), NTSL, DMA, Agile Methodologies (Scrum), Azure DevOps, Product Owner.</p>
                     </div>
                 </div>
             </section>
@@ -521,24 +505,27 @@
                 <h3 class="section-title">Education</h3>
                 <div class="item">
                     <ul class="item-list">
-                        <li><strong>MBA in Data Science and Analytics</strong> — USP / ESALQ (400h)</li>
-                        <li><strong>Global Broker MBA / InfoMoney</strong> — IBMEC (420h)</li>
-                        <li><strong>Bachelor's in Business Administration</strong> — Universidade Católica Dom Bosco (UCDB)</li>
-                        <li><strong>Pós-Graduação em Direito</strong> — Foco em Processo Civil (em curso)</li>
-                        <li><strong>Curso de Economia</strong> — UFMS (Incompleto - 4º Semestre)</li>
-                        <li><strong>Oficial da Reserva (Arma de Cavalaria)</strong> — NPOR / 20º RCB</li>
-                        <li><strong>Técnico em Mecânica</strong> — IFMS (Incompleto)</li>
+                        <li><strong>Systems Analysis and Development (ADS), Software Engineering</strong> &mdash; Estácio (2025 – 2028)</li>
+                        <li><strong>Project Management</strong> &mdash; Escola DNC (2025)</li>
+                        <li><strong>Data Science Training</strong> &mdash; Trading com Dados (2024 – 2026)</li>
+                        <li><strong>Data Manager Training</strong> &mdash; Escola DNC (2022 – 2023)</li>
+                        <li><strong>MBA in Data Science and Analytics</strong> &mdash; USP / ESALQ (400h)</li>
+                        <li><strong>Global Broker MBA / InfoMoney</strong> &mdash; IBMEC (420h)</li>
+                        <li><strong>Bachelor's in Business Administration</strong> &mdash; Universidade Católica Dom Bosco (UCDB)</li>
+                        <li><strong>Postgraduate in Law</strong> &mdash; Focus on Civil Procedure (Ongoing)</li>
+                        <li><strong>Economics Degree</strong> &mdash; UFMS (Incomplete – 4th Semester)</li>
+                        <li><strong>Reserve Officer (Cavalry Branch)</strong> &mdash; NPOR / 20th RCB</li>
+                        <li><strong>Mechanical Technician Degree</strong> &mdash; IFMS (Incomplete)</li>
                     </ul>
                 </div>
             </section>
 
             <section>
-                <h3 class="section-title">Certifications & Extracurriculars</h3>
+                <h3 class="section-title">Certifications &amp; Extracurriculars</h3>
                 <div class="skills-container">
                     <div class="skill-group">
                         <h4>Technology and Data</h4>
-                        <p>Formação em Dados (DNC - 520h), Python Pandas & Estatística (Alura), Formação Data Science &
-                            ML (Alura/DNC), Power BI Avançado & GA4 (Linkedin Learning/DNC).</p>
+                        <p>Data Training (DNC – 520h), Python Pandas &amp; Statistics (Alura), Data Science &amp; ML Training (Alura/DNC), Advanced Power BI &amp; GA4 (LinkedIn Learning/DNC), Advanced Power BI Techniques, Big Data Fundamentals, Software Architecture Principles, Data Science Fundamentals.</p>
                     </div>
                     <div class="skill-group">
                         <h4>Market and Finance</h4>
@@ -546,13 +533,11 @@
                     </div>
                     <div class="skill-group">
                         <h4>Leadership and Management</h4>
-                        <p>Trilha Liderança 4.0 (Saint Paul - 228h), Professional Coach Certification (SLAC - 120h),
-                            PDC-Professional DISC (8h), Métodos Ágeis (Scrum/Kanban).</p>
+                        <p>Leadership 4.0 Track (Saint Paul – 228h), Professional Coach Certification (SLAC – 120h), PDC-Professional DISC (8h), Agile Methods (Scrum/Kanban).</p>
                     </div>
                     <div class="skill-group">
-                        <h4>Outros</h4>
-                        <p>Inglês Comunicativo (Wizard/UCDB), Ordem Demolay (Grau Chevalier), Cursos SEBRAE (Plano de
-                            Negócios) e FGV (Gestão Estratégica).</p>
+                        <h4>Others</h4>
+                        <p>Communicative English (Wizard/UCDB), Order of DeMolay (Degree of Chevalier), SEBRAE Courses (Business Plan) and FGV (Strategic Management).</p>
                     </div>
                 </div>
             </section>
@@ -560,22 +545,29 @@
         </main>
     </div>
 
-    
-
     <script>
         const themeToggleBtn = document.getElementById('theme-toggle');
-        
+        const profilePhoto = document.getElementById('profile-photo');
+
         themeToggleBtn.addEventListener('click', () => {
             let theme = document.documentElement.getAttribute('data-theme');
             let switchToTheme = theme === 'dark' ? 'light' : 'dark';
-            
-            if(switchToTheme === 'dark') {
+
+            if (switchToTheme === 'dark') {
                 document.documentElement.setAttribute('data-theme', 'dark');
             } else {
                 document.documentElement.removeAttribute('data-theme');
             }
             localStorage.setItem('theme', switchToTheme);
         });
+
+        // Clique na foto alterna entre as duas imagens
+        if (profilePhoto) {
+            profilePhoto.addEventListener('click', () => {
+                const isDefault = profilePhoto.src.includes('image_jt.jpg');
+                profilePhoto.src = isDefault ? 'image_jt_2.JPG' : 'image_jt.jpg';
+            });
+        }
     </script>
 </body>
 
