@@ -215,7 +215,7 @@
     <h1>João Tomás M. Venâncio</h1>
 
     <div class="intro">
-        <img id="profile-photo" src="image_jt.jpg" alt="João Tomás Venâncio" class="profile-img">
+        <img id="profile-photo" src="assets/image_jt.jpg" alt="João Tomás Venâncio" class="profile-img">
 
         <p>Welcome! Here you can find a bit about myself and the stuff I have been building.</p>
 
@@ -313,8 +313,8 @@
             if (savedPhoto) profilePhoto.src = savedPhoto;
 
             profilePhoto.addEventListener('click', () => {
-                const isDefault = profilePhoto.src.endsWith('image_jt.jpg');
-                const newSrc = isDefault ? 'image_jt_2.JPG' : 'image_jt.jpg';
+                const isDefault = profilePhoto.src.endsWith('assets/image_jt.jpg');
+                const newSrc = isDefault ? 'assets/image_jt_2.JPG' : 'assets/image_jt.jpg';
                 profilePhoto.src = newSrc;
                 localStorage.setItem('profilePhoto', newSrc);
             });
