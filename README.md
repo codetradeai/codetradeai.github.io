@@ -1,4 +1,4 @@
-# João Tomás M. Venâncio – AI Engineer & Founder
+# João Tomás M. Venâncio – AI Product Strategy & Founder
 
 Este repositório contém o código da minha landing page pessoal em **modo escuro**, focada em posicionamento como **AI Engineer & Automation Specialist**, com ênfase em projetos reais, métricas de resultado e geração de valor para negócios.
 
