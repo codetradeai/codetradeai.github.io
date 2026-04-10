@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>João Tomás Venâncio | Portfólio</title>
-    <meta name="description" content="Product Owner e AI Engineer. Fundador da C&T.AI — construindo agentes de IA, pipelines de dados e soluções SaaS.">
+    <meta name="description"
+        content="Product Owner e AI Engineer. Fundador da C&T.AI — construindo agentes de IA, pipelines de dados e soluções SaaS.">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
@@ -28,7 +30,11 @@
             --hover-bg: #161b22;
         }
 
-        * { box-sizing: border-box; margin: 0; padding: 0; }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -74,10 +80,19 @@
             background: var(--hover-bg);
         }
 
-        .ctrl-btn svg { width: 16px; height: 16px; fill: currentColor; }
+        .ctrl-btn svg {
+            width: 16px;
+            height: 16px;
+            fill: currentColor;
+        }
 
-        [data-theme="dark"] .icon-moon { display: none; }
-        :root:not([data-theme="dark"]) .icon-sun { display: none; }
+        [data-theme="dark"] .icon-moon {
+            display: none;
+        }
+
+        :root:not([data-theme="dark"]) .icon-sun {
+            display: none;
+        }
 
         /* Typography */
         h1 {
@@ -109,9 +124,13 @@
             text-decoration: none;
         }
 
-        a:hover { text-decoration: underline; }
+        a:hover {
+            text-decoration: underline;
+        }
 
-        strong { font-weight: 600; }
+        strong {
+            font-weight: 600;
+        }
 
         /* Intro with floated image */
         .intro::after {
@@ -132,7 +151,9 @@
             transition: opacity 0.3s;
         }
 
-        .profile-img:hover { opacity: 0.85; }
+        .profile-img:hover {
+            opacity: 0.85;
+        }
 
         /* Lists */
         ul {
@@ -166,7 +187,9 @@
             margin-left: 8px;
         }
 
-        .resources li:last-child::after { content: ""; }
+        .resources li:last-child::after {
+            content: "";
+        }
 
         /* Footer quote */
         .closing {
@@ -187,7 +210,9 @@
 
         /* Mobile */
         @media (max-width: 600px) {
-            body { padding: 64px 20px 60px; }
+            body {
+                padding: 64px 20px 60px;
+            }
 
             .profile-img {
                 float: none;
@@ -197,9 +222,14 @@
                 margin: 0 0 20px;
             }
 
-            h1 { font-size: 22px; }
+            h1 {
+                font-size: 22px;
+            }
 
-            .controls { top: 14px; right: 14px; }
+            .controls {
+                top: 14px;
+                right: 14px;
+            }
         }
     </style>
     <script>
@@ -209,13 +239,20 @@
         }
     </script>
 </head>
+
 <body>
 
     <div class="controls">
         <a href="index-en.html" class="ctrl-btn" title="English version">🇺🇸</a>
         <button id="theme-toggle" class="ctrl-btn" aria-label="Alternar tema">
-            <svg class="icon-sun" viewBox="0 0 24 24"><path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0 .39-.39.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0 .39-.39.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41.39.39 1.03.39 1.41 0l1.06-1.06zM7.05 18.36c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41.39.39 1.03.39 1.41 0l1.06-1.06z"/></svg>
-            <svg class="icon-moon" viewBox="0 0 24 24"><path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-3.03 0-5.5-2.47-5.5-5.5 0-1.82.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z"/></svg>
+            <svg class="icon-sun" viewBox="0 0 24 24">
+                <path
+                    d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0 .39-.39.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0 .39-.39.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41.39.39 1.03.39 1.41 0l1.06-1.06zM7.05 18.36c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41.39.39 1.03.39 1.41 0l1.06-1.06z" />
+            </svg>
+            <svg class="icon-moon" viewBox="0 0 24 24">
+                <path
+                    d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-3.03 0-5.5-2.47-5.5-5.5 0-1.82.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z" />
+            </svg>
         </button>
     </div>
 
@@ -224,11 +261,15 @@
     <div class="intro">
         <img id="profile-photo" src="image_jt.jpg" alt="João Tomás Venâncio" class="profile-img">
 
-        <p>Bem-vindo! Aqui você encontra um pouco sobre mim e o que tenho construído.</p>
+        <p>Bem vindo(a)! Aqui você encontra um pouco sobre mim e o que tenho construído.</p>
 
-        <p>Sou fundador da <strong>C&T.AI</strong> (Codetrade Inteligência), atuando como Product Owner e AI Engineer. Tenho expertise em modelagem de software, automação de processos, agentes de IA e ciência de dados. Construo produtos e soluções ponta a ponta para empresas que operam em ambientes de alta exigência analítica.</p>
+        <p>Sou fundador da <strong>C&T.AI</strong> (Codetrade Inteligência), atuando como Product Owner e AI Engineer.
+            Tenho expertise em modelagem de software, automação de processos, agentes de IA e ciência de dados. Construo
+            produtos e soluções ponta a ponta para empresas que operam em ambientes de alta exigência analítica.</p>
 
-        <p>Sou Bacharel em Administração (UCDB), com MBAs em Broker Global (IBMEC) e Data Science & Analytics (USP-ESALQ), certificação CPA-10, e formações complementares em liderança, dados e produto. Graduando em ADS e Engenharia de Software (Estácio). Resido em Campo Grande, MS.</p>
+        <p>Sou Bacharel em Administração (UCDB), com MBAs em Broker Global (IBMEC) e Data Science & Analytics
+            (USP-ESALQ), certificação CPA-10, e formações complementares em liderança, dados e produto. Graduando em ADS
+            e Engenharia de Software (Estácio). Resido em Campo Grande, MS.</p>
     </div>
 
     <h2>Recursos e Contato</h2>
@@ -240,35 +281,54 @@
     </ul>
 
     <h2>Inteligência Artificial e Legal Ops (2025–...)</h2>
-    <p>No <strong>Ernesto Borges Advogados</strong>, lidero iniciativas de Data, AI & Automation na divisão de Legal Operations. Meu objetivo é escalar operações jurídicas complexas através da implementação técnica de LLMs e automação.</p>
+    <p>No <strong>Ernesto Borges Advogados</strong>, lidero iniciativas de Data, AI & Automation na divisão de Legal
+        Operations. Meu objetivo é escalar operações jurídicas complexas através da implementação técnica de LLMs e
+        automação.</p>
     <ul>
-        <li><strong>RAG Jurídico:</strong> Sistema de Retrieval-Augmented Generation em produção sobre milhares de documentos internos, com ingestão, chunking e recuperação semântica utilizando Pinecone e OpenAI.</li>
-        <li><strong>Mapeamento e Redesenho de Processos:</strong> Otimização de fluxos operacionais críticos (pós-cadastro, atas de audiência, assinaturas) via RPA e arquiteturas modulares de prompts.</li>
-        <li><strong>Gestão Ágil (Legal Ops):</strong> Coordenação de entregas no Azure DevOps, conectando necessidades jurídicas, squads de tecnologia e infraestrutura de dados. Governança via KPIs e BI dashboards.</li>
+        <li><strong>RAG Jurídico:</strong> Sistema de Retrieval-Augmented Generation em produção sobre milhares de
+            documentos internos, com ingestão, chunking e recuperação semântica utilizando Pinecone e OpenAI.</li>
+        <li><strong>Mapeamento e Redesenho de Processos:</strong> Otimização de fluxos operacionais críticos
+            (pós-cadastro, atas de audiência, assinaturas) via RPA e arquiteturas modulares de prompts.</li>
+        <li><strong>Gestão Ágil (Legal Ops):</strong> Coordenação de entregas no Azure DevOps, conectando necessidades
+            jurídicas, squads de tecnologia e infraestrutura de dados. Governança via KPIs e BI dashboards.</li>
     </ul>
 
     <h2>Produtos SaaS e Agentes de IA (2024–...)</h2>
-    <p>Como Founder da <strong>C&T.AI</strong>, foco no design e implementação autônoma de soluções de dados e inteligência artificial para Startups e PMEs.</p>
+    <p>Como Founder da <strong>C&T.AI</strong>, foco no design e implementação autônoma de soluções de dados e
+        inteligência artificial para Startups e PMEs.</p>
     <ul>
-        <li><strong>Sherlock Stock (Insights):</strong> Ferramenta SaaS de análise de mercado B3. Integração com APIs financeiras para desenvolver um "moat" através de memória de usuário personalizada (React/TypeScript, Supabase e n8n).</li>
-        <li><strong>Foco:</strong> Arquitetura de banco de dados (Supabase) e UI/UX de um aplicativo de desenvolvimento pessoal centrado em técnicas de mindset de alta performance para o usuário (Agente).</li>
-        <li><strong>SDR Agents:</strong> Agentes conversacionais autônomos para WhatsApp integrados ao n8n, Z-API, OpenAI e CRMs, para qualificação ativa de leads.</li>
+        <li><strong>Sherlock Stock (Insights):</strong> Ferramenta SaaS de análise de mercado B3. Integração com APIs
+            financeiras para desenvolver um "moat" através de memória de usuário personalizada (React/TypeScript,
+            Supabase e n8n).</li>
+        <li><strong>Foco:</strong> Arquitetura de banco de dados (Supabase) e UI/UX de um aplicativo de desenvolvimento
+            pessoal centrado em técnicas de mindset de alta performance para o usuário (Agente).</li>
+        <li><strong>SDR Agents:</strong> Agentes conversacionais autônomos para WhatsApp integrados ao n8n, Z-API,
+            OpenAI e CRMs, para qualificação ativa de leads.</li>
     </ul>
 
     <h2>Mercado Financeiro e Growth (2023–2024)</h2>
-    <p>Anteriormente, apliquei análise de dados diretamente na originação de negócios e operações de trade sistemático.</p>
+    <p>Anteriormente, apliquei análise de dados diretamente na originação de negócios e operações de trade sistemático.
+    </p>
     <ul>
-        <li>Na <strong>Nelogica</strong>, liderei estratégias de Growth e LTV para o módulo de robôs, alavancando a base ativa em 4x (+7.140 traders). Criei e conduzi tecnicamente a comunidade oficial de automação (+40k membros, +80k views).</li>
-        <li>Na <strong>CM Capital</strong>, atuei como Analista de Direct Market Access (DMA), focando no desenvolvimento e integração de estratégias algorítmicas (C# DLLs) para o mercado financeiro.</li>
-        <li>Na <strong>Cubo Analítica</strong>, conduzi parcerias estratégicas e projetos de consultoria focados em dados e analytics.</li>
+        <li>Na <strong>Nelogica</strong>, liderei estratégias de Growth e LTV para o módulo de robôs, alavancando a base
+            ativa em 4x (+7.140 traders). Criei e conduzi tecnicamente a comunidade oficial de automação (+40k membros,
+            +80k views).</li>
+        <li>Na <strong>CM Capital</strong>, atuei como Analista de Direct Market Access (DMA), focando no
+            desenvolvimento e integração de estratégias algorítmicas (C# DLLs) para o mercado financeiro.</li>
+        <li>Na <strong>Cubo Analítica</strong>, conduzi parcerias estratégicas e projetos de consultoria focados em
+            dados e analytics.</li>
     </ul>
 
     <h2>Competências e Ferramentas</h2>
     <ul>
-        <li><strong>IA & Automação:</strong> n8n, LangChain, LangGraph, OpenAI API, Claude API, RAG Pipelines, Prompt Engineering, Pinecone, Supabase Vector.</li>
-        <li><strong>Desenvolvimento:</strong> Python, TypeScript, React, Node.js, SQL, PostgreSQL, REST APIs, Power Automate, C# (DLLs), Docker.</li>
-        <li><strong>Dados & Analytics:</strong> Power BI, Pandas, Machine Learning, Scikit-learn, BRAPI, B3 Market Data.</li>
-        <li><strong>Fintech & Produto:</strong> Systematic Trading (Nelogica/Profit), NTSL, DMA, Metodologias Ágeis (Scrum), Azure DevOps, Product Owner.</li>
+        <li><strong>IA & Automação:</strong> n8n, LangChain, LangGraph, OpenAI API, Claude API, RAG Pipelines, Prompt
+            Engineering, Pinecone, Supabase Vector.</li>
+        <li><strong>Desenvolvimento:</strong> Python, TypeScript, React, Node.js, SQL, PostgreSQL, REST APIs, Power
+            Automate, C# (DLLs), Docker.</li>
+        <li><strong>Dados & Analytics:</strong> Power BI, Pandas, Machine Learning, Scikit-learn, BRAPI, B3 Market Data.
+        </li>
+        <li><strong>Fintech & Produto:</strong> Systematic Trading (Nelogica/Profit), NTSL, DMA, Metodologias Ágeis
+            (Scrum), Azure DevOps, Product Owner.</li>
     </ul>
 
     <h2>Formação Acadêmica</h2>
@@ -284,16 +344,22 @@
 
     <h2>Certificações</h2>
     <ul>
-        <li><strong>Tecnologia:</strong> Python Pandas & Estatística (Alura), Data Science & ML (Alura/DNC), Power BI Avançado & GA4, Fundamentos de Big Data e Arquitetura de Software.</li>
+        <li><strong>Tecnologia:</strong> Python Pandas & Estatística (Alura), Data Science & ML (Alura/DNC), Power BI
+            Avançado & GA4, Fundamentos de Big Data e Arquitetura de Software.</li>
         <li><strong>Mercado:</strong> CPA-10 ANBIMA, Análise Técnica (Saint Paul).</li>
-        <li><strong>Liderança:</strong> Trilha Liderança 4.0 (Saint Paul – 228h), Professional Coach (SLAC – 120h), PDC-Professional DISC, Métodos Ágeis.</li>
+        <li><strong>Liderança:</strong> Trilha Liderança 4.0 (Saint Paul – 228h), Professional Coach (SLAC – 120h),
+            PDC-Professional DISC, Métodos Ágeis.</li>
     </ul>
 
     <h2>Background e Projetos Anteriores</h2>
     <p>Minha fundação une liderança, desenvolvimento de sistemas e resiliência tática.</p>
     <ul>
-        <li><strong>Carreira anterior:</strong> Assistente de Relacionamento Nível III (Nelogica, 2021–2022), Assistente PJ e Caixa (Sicoob, 2021; Uniprime, 2019), Especialista Apple B2B (iPlace, 2020), Sócio Administrador de Indústria de Cosméticos (Ana Mattos / Ybá Cosméticos, 2015–2017).</li>
-        <li><strong>Militar (2014):</strong> Aspirante a Oficial R2 da Arma de Cavalaria (20º RCB – NPOR/Exército Brasileiro). Experiência que consolidou disciplina, liderança sob pressão e tomada de decisão em cenários incertos.</li>
+        <li><strong>Carreira anterior:</strong> Assistente de Relacionamento Nível III (Nelogica, 2021–2022), Assistente
+            PJ e Caixa (Sicoob, 2021; Uniprime, 2019), Especialista Apple B2B (iPlace, 2020), Sócio Administrador de
+            Indústria de Cosméticos (Ana Mattos / Ybá Cosméticos, 2015–2017).</li>
+        <li><strong>Militar (2014):</strong> Aspirante a Oficial R2 da Arma de Cavalaria (20º RCB – NPOR/Exército
+            Brasileiro). Experiência que consolidou disciplina, liderança sob pressão e tomada de decisão em cenários
+            incertos.</li>
         <li><strong>Esportes:</strong> Nas horas vagas, busco alta performance em treinos de Triathlon e CrossFit.</li>
     </ul>
 
@@ -323,4 +389,5 @@
         }
     </script>
 </body>
+
 </html>
