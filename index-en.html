@@ -1,327 +1,200 @@
 <!DOCTYPE html>
 <html lang="en-US">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>João Tomás Venâncio | Portfolio</title>
-    <meta name="description" content="Portfolio of João Tomás Venâncio — AI, Data Science, Automation and Business Strategy.">
+    <meta name="description" content="Product Owner and AI Engineer. Founder of C&T.AI — building AI agents, data pipelines, and SaaS solutions.">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
         :root {
-            --bg-color: #ffffff;
-            --text-main: #111827;
-            --text-muted: #6b7280;
-            --border: #f3f4f6;
-            --border-dark: #e5e7eb;
-            --accent: #111827;
+            --bg: #ffffff;
+            --text: #24292f;
+            --muted: #57606a;
+            --link: #0969da;
+            --border: #d0d7de;
+            --heading: #0550ae;
+            --hover-bg: #f6f8fa;
         }
 
         [data-theme="dark"] {
-            --bg-color: #111827;
-            --text-main: #f9fafb;
-            --text-muted: #9ca3af;
-            --border: #1f2937;
-            --border-dark: #374151;
-            --accent: #f9fafb;
+            --bg: #0d1117;
+            --text: #c9d1d9;
+            --muted: #8b949e;
+            --link: #58a6ff;
+            --border: #30363d;
+            --heading: #79c0ff;
+            --hover-bg: #161b22;
         }
 
-        [data-theme="dark"] .icon-moon { display: none; }
-        :root:not([data-theme="dark"]) .icon-sun { display: none; }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
 
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-            transition: background-color 0.3s ease, color 0.3s ease;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            font-size: 15px;
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 48px 32px 80px;
+            transition: background 0.3s, color 0.3s;
         }
 
-        /* Floating Controls */
-        .controls-container {
+        /* Controls */
+        .controls {
             position: fixed;
-            top: 24px;
+            top: 20px;
             right: 24px;
             display: flex;
-            gap: 12px;
-            z-index: 1000;
+            gap: 10px;
+            z-index: 100;
         }
 
-        .control-btn {
-            background: transparent;
-            border: 1px solid var(--border-dark);
-            border-radius: 50%;
-            width: 44px;
-            height: 44px;
+        .ctrl-btn {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            width: 36px;
+            height: 36px;
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            color: var(--text-muted);
-            transition: all 0.2s ease;
-            background-color: var(--bg-color);
+            color: var(--muted);
             text-decoration: none;
-            font-size: 18px;
+            font-size: 15px;
+            transition: all 0.2s;
         }
 
-        .control-btn:hover {
-            color: var(--text-main);
-            border-color: var(--text-muted);
-            transform: scale(1.05);
+        .ctrl-btn:hover {
+            color: var(--text);
+            border-color: var(--muted);
+            background: var(--hover-bg);
         }
 
-        .control-btn svg {
-            width: 20px;
-            height: 20px;
-            fill: currentColor;
-        }
+        .ctrl-btn svg { width: 16px; height: 16px; fill: currentColor; }
 
         [data-theme="dark"] .icon-moon { display: none; }
         :root:not([data-theme="dark"]) .icon-sun { display: none; }
 
-        /* Main Layout */
-        .layout {
-            display: flex;
-            max-width: 1200px;
-            margin: 0 auto;
-            min-height: 100vh;
+        /* Typography */
+        h1 {
+            font-size: 26px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 24px;
+            color: var(--text);
         }
 
-        /* Left Sidebar */
-        .sidebar {
-            width: 35%;
-            padding: 80px 40px 60px 40px;
-            position: sticky;
-            top: 0;
-            height: max-content;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            border-right: 1px solid var(--border-dark);
+        h2 {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--heading);
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 6px;
+            margin: 40px 0 16px;
+        }
+
+        p {
+            margin-bottom: 14px;
+            color: var(--text);
+        }
+
+        a {
+            color: var(--link);
+            text-decoration: none;
+        }
+
+        a:hover { text-decoration: underline; }
+
+        strong { font-weight: 600; }
+
+        /* Intro with floated image */
+        .intro::after {
+            content: "";
+            display: table;
+            clear: both;
         }
 
         .profile-img {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
+            float: left;
+            width: 140px;
+            height: 140px;
             object-fit: cover;
             object-position: top;
-            margin-bottom: 32px;
-            border: 4px solid var(--bg-color);
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+            border-radius: 6px;
+            margin: 4px 24px 12px 0;
             cursor: pointer;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: opacity 0.3s;
         }
 
-        .profile-img:hover {
-            transform: scale(1.05);
-            box-shadow: 0 14px 30px -5px rgba(0, 0, 0, 0.15), 0 10px 14px -6px rgba(0, 0, 0, 0.12);
-        }
+        .profile-img:hover { opacity: 0.85; }
 
-        h1 {
-            font-size: 2.2rem;
-            font-weight: 700;
-            letter-spacing: -0.025em;
-            margin-bottom: 8px;
-            line-height: 1.1;
-            color: var(--text-main);
-        }
-
-        h2.title {
-            font-size: 1.05rem;
-            color: var(--text-muted);
-            font-weight: 400;
-            margin-bottom: 32px;
-            line-height: 1.5;
-        }
-
-        .contact-links {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-            margin-top: 48px;
-            font-size: 0.95rem;
-        }
-
-        .contact-links a,
-        .contact-links span {
-            color: var(--text-muted);
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            transition: color 0.2s;
-        }
-
-        .contact-links a:hover {
-            color: var(--accent);
-        }
-
-        .icon {
-            width: 18px;
-            height: 18px;
-            fill: currentColor;
-            opacity: 0.7;
-        }
-
-        /* Right Content Area */
-        .main-content {
-            width: 65%;
-            padding: 80px 80px 100px 80px;
-            overflow-y: auto;
-        }
-
-        section {
-            margin-bottom: 64px;
-        }
-
-        h3.section-title {
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-bottom: 32px;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: var(--text-muted);
-            border-bottom: 1px solid var(--border-dark);
-            padding-bottom: 12px;
-        }
-
-        p.summary {
-            color: var(--text-main);
-            font-size: 1.1rem;
-            font-weight: 300;
-            line-height: 1.8;
-            margin-bottom: 24px;
-        }
-
-        .item {
-            margin-bottom: 40px;
-        }
-
-        .item-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            margin-bottom: 6px;
-        }
-
-        .item-title {
-            font-weight: 600;
-            font-size: 1.15rem;
-            color: var(--text-main);
-        }
-
-        .item-date {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            white-space: nowrap;
-            font-weight: 500;
-        }
-
-        .item-subtitle {
-            font-size: 0.95rem;
-            color: var(--text-muted);
-            font-weight: 500;
+        /* Lists */
+        ul {
+            padding-left: 22px;
             margin-bottom: 16px;
         }
 
-        ul.item-list {
-            list-style-type: none;
+        li {
+            margin-bottom: 10px;
+            color: var(--text);
         }
 
-        ul.item-list li {
-            position: relative;
-            padding-left: 20px;
-            margin-bottom: 12px;
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            line-height: 1.6;
+        li::marker {
+            color: var(--muted);
         }
 
-        ul.item-list li::before {
-            content: "→";
-            position: absolute;
-            left: 0;
-            color: var(--border-dark);
-            font-weight: bold;
+        /* Resources inline */
+        .resources {
+            list-style: none;
+            padding-left: 0;
         }
 
-        .skills-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 32px;
+        .resources li {
+            display: inline;
+            margin-right: 8px;
         }
 
-        .skill-group h4 {
-            font-size: 0.95rem;
-            font-weight: 600;
-            margin-bottom: 12px;
-            color: var(--text-main);
+        .resources li::after {
+            content: " ·";
+            color: var(--muted);
+            margin-left: 8px;
         }
 
-        .skill-group p {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            line-height: 1.6;
-        }
+        .resources li:last-child::after { content: ""; }
 
-        /* Tablet */
-        @media (max-width: 992px) {
-            .sidebar {
-                width: 40%;
-                padding: 60px 30px;
-            }
-            .main-content {
-                width: 60%;
-                padding: 60px 40px;
-            }
+        /* Footer quote */
+        .closing {
+            margin-top: 56px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
+            font-size: 13px;
+            color: var(--muted);
+            font-style: italic;
         }
 
         /* Mobile */
-        @media (max-width: 768px) {
-            .layout {
-                flex-direction: column;
+        @media (max-width: 600px) {
+            body { padding: 64px 20px 60px; }
+
+            .profile-img {
+                float: none;
+                display: block;
+                width: 120px;
+                height: 120px;
+                margin: 0 0 20px;
             }
 
-            .controls-container {
-                top: 16px;
-                right: 16px;
-                gap: 8px;
-            }
+            h1 { font-size: 22px; }
 
-            .sidebar {
-                width: 100%;
-                position: static;
-                padding: 80px 20px 40px 20px;
-                border-right: none;
-                border-bottom: 1px solid var(--border-dark);
-                text-align: center;
-                align-items: center;
-            }
-
-            .contact-links {
-                align-items: center;
-            }
-
-            .main-content {
-                margin-left: 0;
-                padding: 40px 20px;
-            }
-
-            .skills-container {
-                grid-template-columns: 1fr;
-            }
+            .controls { top: 14px; right: 14px; }
         }
     </style>
-
     <script>
         const savedTheme = localStorage.getItem('theme');
         if (savedTheme === 'dark') {
@@ -329,222 +202,95 @@
         }
     </script>
 </head>
-
 <body>
 
-    <div class="controls-container">
-        <a href="index.html" class="control-btn" aria-label="Switch to Portuguese" title="Versão em Português">
-            🇧🇷
-        </a>
-        <button id="theme-toggle" class="control-btn" aria-label="Toggle theme">
+    <div class="controls">
+        <a href="index.html" class="ctrl-btn" title="Versão em Português">🇧🇷</a>
+        <button id="theme-toggle" class="ctrl-btn" aria-label="Toggle theme">
             <svg class="icon-sun" viewBox="0 0 24 24"><path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0 .39-.39.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0 .39-.39.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41.39.39 1.03.39 1.41 0l1.06-1.06zM7.05 18.36c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41.39.39 1.03.39 1.41 0l1.06-1.06z"/></svg>
             <svg class="icon-moon" viewBox="0 0 24 24"><path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-3.03 0-5.5-2.47-5.5-5.5 0-1.82.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z"/></svg>
         </button>
     </div>
 
-    <div class="layout">
-        <aside class="sidebar">
-            <img id="profile-photo" src="image_jt.jpg" alt="João Tomás Venâncio" class="profile-img">
+    <h1>João Tomás M. Venâncio</h1>
 
-            <h1>João Tomás M. Venâncio</h1>
-            <h2 class="title">AI &amp; Automation | Data Science<br>Business Management &amp; CS</h2>
+    <div class="intro">
+        <img id="profile-photo" src="image_jt.jpg" alt="João Tomás Venâncio" class="profile-img">
 
-            <div class="contact-links">
-                <span>
-                    <svg class="icon" viewBox="0 0 24 24">
-                        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
-                    </svg>
-                    Campo Grande, MS — Brazil
-                </span>
-                <a href="mailto:joaotomasvenancio@gmail.com">
-                    <svg class="icon" viewBox="0 0 24 24">
-                        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
-                    </svg>
-                    joaotomasvenancio@gmail.com
-                </a>
-                <span>
-                    <svg class="icon" viewBox="0 0 24 24">
-                        <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z" />
-                    </svg>
-                    (67) 99226-5673
-                </span>
-                <a href="https://www.linkedin.com/in/joao-tomas-martins-venancio/" target="_blank">
-                    <svg class="icon" viewBox="0 0 24 24">
-                        <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" />
-                    </svg>
-                    LinkedIn
-                </a>
-                <a href="https://github.com/codetradeai" target="_blank">
-                    <svg class="icon" viewBox="0 0 24 24">
-                        <path d="M12 2A10 10 0 0 0 8.84 21.5c.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.45-1.15-1.11-1.46-1.11-1.46-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z" />
-                    </svg>
-                    GitHub
-                </a>
-            </div>
-        </aside>
+        <p>Welcome! Here you can find a bit about myself and the stuff I have been building.</p>
 
-        <main class="main-content">
+        <p>I am the founder of <strong>C&T.AI</strong> (Codetrade Intelligence), working as a Product Owner and AI Engineer. I have expertise in software modeling, process automation, AI agents, and data science. I build end-to-end products and solutions for companies operating in highly demanding analytical environments.</p>
 
-            <section>
-                <h3 class="section-title">Professional Summary</h3>
-                <p class="summary">Born and raised in Campo Grande (MS), I act as Founder of C&amp;T.AI (Codetrade Intelligence, Systems and Technology), building SaaS products, AI agents, and end-to-end data solutions for companies operating in highly demanding analytical environments. I hold a Bachelor's degree in Business Administration (UCDB), with MBAs in Global Broker (IBMEC) and Data Science &amp; Analytics (USP-ESALQ), CPA-10 certification, and complementary training in leadership, data, and product &mdash; with PMP, SSM, and Lean Six Sigma Green Belt in progress. My career combines business, sales, financial markets, automation, and legal tech. At Nelogica, I worked in Customer Success and Growth, focusing on the strategy automation module, supporting traders, and expanding the user base. At CM Capital, I was a DMA Analyst, close to variable income operations and investor client needs. At Cubo Analítica, I acted as a Business Partner on data and analytics projects. At Ernesto Borges Advogados, I led Data, AI &amp; Automation initiatives within the Legal Operations division &mdash; process mapping, LLM implementation, Python automation, and KPI governance in Azure DevOps. Concurrently, I led independent legal tech projects, including RAG systems in production. As founder of C&amp;T.AI, I design and implement AI agents, data pipelines, and analytics platforms &mdash; with deliveries such as an Insights system (SaaS for market analysis) and WhatsApp AI agents for sales and support. My work merges product vision with technical depth: I understand business pain points, translate them into data architecture, automation, and machine learning models, and closely track metrics and results. Accumulated experience with traders, investors, and SMEs helps me build truly usable solutions &mdash; not just technically correct ones. I served as a Reserve Officer in the Cavalry (20th RCB &ndash; NPOR / Brazilian Army), consolidating discipline, leadership under pressure, and decision-making in uncertain scenarios &mdash; competencies I apply directly in high-responsibility data, AI, and finance projects. Today, my focus is helping companies and professionals leverage AI, data, and automation to make better decisions, scale operations, and compete in increasingly competitive and quantitative markets.</p>
-            </section>
-
-            <section>
-                <h3 class="section-title">Professional Experience</h3>
-
-                <div class="item">
-                    <div class="item-header">
-                        <span class="item-title">Data, AI &amp; Automation | Legal Operations Division</span>
-                        <span class="item-date">Apr/2025 – Dec/2025</span>
-                    </div>
-                    <div class="item-subtitle">Ernesto Borges Advogados</div>
-                    <ul class="item-list">
-                        <li><strong>Process Mapping and Automation Design:</strong> Led the mapping and redesign of critical legal operational workflows (post-registration, hearing minutes, and legal publications), focusing on scalability through RPA and artificial intelligence.</li>
-                        <li><strong>AI Implementation and Automated Workflows:</strong> Designed solutions using LLMs (Large Language Models), prompt engineering, and Power Automate for document classification, data enrichment, and automated extraction of procedural information.</li>
-                        <li><strong>Operational Stakeholder Management:</strong> Acted strategically alongside the Legal Operations Division to align technical scope and legal needs, bridging communication between vendors, technical squads, and internal departments.</li>
-                        <li><strong>Agile Project Coordination:</strong> Structured backlogs, epics, and sprints in Azure DevOps; coordinated deliveries across Legal, Data, IT, and Infrastructure teams.</li>
-                        <li><strong>BI and KPI Governance:</strong> Defined KPIs to measure efficiency, coverage, and automation impact, proposing operational dashboards for traceability and informed decision-making.</li>
-                        <li><strong>Legal Tech Culture Enablement:</strong> Promoted a data- and automation-driven culture, encouraging experimentation and the use of low-code tools.</li>
-                        <li><strong>Strategic Prioritization and ROI:</strong> Applied value vs. effort prioritization models and ROI estimations to drive high-impact project decisions.</li>
-                        <li><strong>Documentation and Scalability:</strong> Standardized workflows and documentation governance to ensure consistency, scalability, and knowledge transfer within the operation.</li>
-                    </ul>
-                </div>
-
-                <div class="item">
-                    <div class="item-header">
-                        <span class="item-title">Business Partner</span>
-                        <span class="item-date">Nov/2024 – Dec/2025</span>
-                    </div>
-                    <div class="item-subtitle">Cubo Analítica</div>
-                    <ul class="item-list">
-                        <li>Led strategic partnerships and consulting projects focused on data and analytics.</li>
-                    </ul>
-                </div>
-
-                <div class="item">
-                    <div class="item-header">
-                        <span class="item-title">Founder &amp; CEO</span>
-                        <span class="item-date">Nov/2024 – Present</span>
-                    </div>
-                    <div class="item-subtitle">C&amp;T.AI — CODETRADE INTELLIGENCE</div>
-                    <ul class="item-list">
-                        <li>Founded and operated a consulting firm specialized in applied AI and process automation for SMEs and Startups.</li>
-                        <li>Developed and delivered conversational AI agents for WhatsApp integrated with CRMs.</li>
-                        <li>Implemented autonomous SDR Agents for lead qualification using n8n workflows.</li>
-                    </ul>
-                </div>
-
-                <div class="item">
-                    <div class="item-header">
-                        <span class="item-title">Direct Market Access (DMA) Analyst</span>
-                        <span class="item-date">Jul/2024 – Oct/2024</span>
-                    </div>
-                    <div class="item-subtitle">CM Capital</div>
-                    <ul class="item-list">
-                        <li>Focused on creating solutions that optimize clients' investment performance.</li>
-                        <li>Developed and integrated algorithmic trading strategy automations for the financial market.</li>
-                    </ul>
-                </div>
-
-                <div class="item">
-                    <div class="item-header">
-                        <span class="item-title">Customer Success Analyst II → Leader Beta Pipeline</span>
-                        <span class="item-date">Jan/2023 – May/2024</span>
-                    </div>
-                    <div class="item-subtitle">Nelogica Sistemas de Software LTDA</div>
-                    <ul class="item-list">
-                        <li><strong>Growth &amp; Expansion Strategy (Growth &amp; LTV):</strong> Led the structuring and execution of multi-channel campaigns (Email, WhatsApp) and data-driven Cross-Sell/Up-Sell actions. The segmentation strategy boosted the robot module's user base by 4x, reaching 7,140 active traders, while powerfully reactivating the inactive base.</li>
-                        <li><strong>Engagement, Content &amp; Community Building:</strong> Created and technically hosted live training and major events (educational lives). Produced content journeys that culminated in founding Nelogica's official automation community, scaling it to over 40,000 members and +80k views.</li>
-                        <li><strong>Institutional Stakeholder Management (B2B):</strong> Built high-level strategic relationships with key business partners, brokers, institutional accounts, and white-label projects, jointly driving partnerships for base expansion.</li>
-                        <li><strong>Multidisciplinary Coordination &amp; Commercial Intelligence:</strong> Continuously monitored results (Data Analysis) and articulated operational sprints alongside Commercial Intelligence, Partnerships, Sales, and Marketing teams, ensuring flawless go-to-market execution.</li>
-                        <li><strong>Inactive Client Recovery and Reactivation:</strong> Implemented campaigns to recover inactive clients by offering incentives and discounts to encourage reactivation and retention.</li>
-                        <li><strong>Cross-Sell and Up-Sell Optimization:</strong> Developed and executed cross-sell and up-sell strategies to increase adherence to superior plans and maximize customer lifetime value (LTV).</li>
-                    </ul>
-                </div>
-
-                <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 24px; line-height: 1.6;">
-                    <strong>Consolidated Previous Experience:</strong> Consistent customer-focused performance, institutional relationship building, B2B/B2C sales, and management through roles as Relationship Assistant Level III (Nelogica, 2021-2022); Corporate Assistant and Teller (Sicoob, 2021; Uniprime, 2019); Apple B2B Specialist (iPlace, 2020); Autonomous Trader in Variable Income / Futures (B3, 2017-2021); alongside an early career foundation as Managing Partner of a Cosmetics Industry (Ana Mattos / Ybá Cosméticos, 2015-2017) and Reserve Officer Aspirant — Cavalry Branch (Brazilian Army / NPOR / 20th RCB, 2014).
-                </p>
-            </section>
-
-            <section>
-                <h3 class="section-title">Featured Projects</h3>
-                <div class="item">
-                    <ul class="item-list">
-                        <li><strong>Sherlock Stock (Insights):</strong> SaaS tool for B3 asset and market analysis. Real-time financial API integration, developing a "moat" through personalized user memory and functions built in React/TypeScript, Supabase, and n8n.</li>
-                        <li><strong>Foco (Personal Development App):</strong> Conception, database architecture, and UI/UX design for an app focused on high-performance mindset techniques for the user (Agent).</li>
-                        <li><strong>Legal RAG (Ernesto Borges):</strong> Retrieval-Augmented Generation system over thousands of internal documents, featuring ingestion, chunking, and semantic retrieval using Pinecone and OpenAI.</li>
-                        <li><strong>WhatsApp AI Sales Agents:</strong> Autonomous AI agents for lead qualification integrated with n8n, Z-API, OpenAI, and CRMs, actively operating as SDRs.</li>
-                    </ul>
-                </div>
-            </section>
-
-            <section>
-                <h3 class="section-title">Skills and Tools</h3>
-                <div class="skills-container">
-                    <div class="skill-group">
-                        <h4>AI &amp; Automation</h4>
-                        <p>n8n, LangChain, LangGraph, OpenAI API, Claude API, RAG Pipelines, Prompt Engineering, Pinecone, Supabase Vector.</p>
-                    </div>
-                    <div class="skill-group">
-                        <h4>Development</h4>
-                        <p>Python, TypeScript, React, Node.js, SQL, PostgreSQL, REST APIs, Power Automate, C# (DLLs), Docker.</p>
-                    </div>
-                    <div class="skill-group">
-                        <h4>Data &amp; Analytics</h4>
-                        <p>Data Team Leadership, Data Engineering, Predictive Analysis, Power BI, Pandas, Machine Learning, Scikit-learn, BRAPI, B3 Market Data.</p>
-                    </div>
-                    <div class="skill-group">
-                        <h4>Fintech &amp; Product</h4>
-                        <p>Systematic Trading (Nelogica/Profit), NTSL, DMA, Agile Methodologies (Scrum), Azure DevOps, Product Owner.</p>
-                    </div>
-                </div>
-            </section>
-
-            <section>
-                <h3 class="section-title">Education</h3>
-                <div class="item">
-                    <ul class="item-list">
-                        <li><strong>Systems Analysis and Development (ADS), Software Engineering</strong> &mdash; Estácio (2025 – 2028)</li>
-                        <li><strong>Project Management</strong> &mdash; Escola DNC (2025)</li>
-                        <li><strong>Data Science Training</strong> &mdash; Trading com Dados (2024 – 2026)</li>
-                        <li><strong>Data Manager Training</strong> &mdash; Escola DNC (2022 – 2023)</li>
-                        <li><strong>MBA in Data Science and Analytics</strong> &mdash; USP / ESALQ (400h)</li>
-                        <li><strong>Global Broker MBA / InfoMoney</strong> &mdash; IBMEC (420h)</li>
-                        <li><strong>Bachelor's in Business Administration</strong> &mdash; Universidade Católica Dom Bosco (UCDB)</li>
-                        <li><strong>Postgraduate in Law</strong> &mdash; Focus on Civil Procedure (Ongoing)</li>
-                        <li><strong>Economics Degree</strong> &mdash; UFMS (Incomplete – 4th Semester)</li>
-                        <li><strong>Reserve Officer (Cavalry Branch)</strong> &mdash; NPOR / 20th RCB</li>
-                        <li><strong>Mechanical Technician Degree</strong> &mdash; IFMS (Incomplete)</li>
-                    </ul>
-                </div>
-            </section>
-
-            <section>
-                <h3 class="section-title">Certifications &amp; Extracurriculars</h3>
-                <div class="skills-container">
-                    <div class="skill-group">
-                        <h4>Technology and Data</h4>
-                        <p>Data Training (DNC – 520h), Python Pandas &amp; Statistics (Alura), Data Science &amp; ML Training (Alura/DNC), Advanced Power BI &amp; GA4 (LinkedIn Learning/DNC), Advanced Power BI Techniques, Big Data Fundamentals, Software Architecture Principles, Data Science Fundamentals.</p>
-                    </div>
-                    <div class="skill-group">
-                        <h4>Market and Finance</h4>
-                        <p>CPA-10 ANBIMA, Technical Analysis Course (Saint Paul).</p>
-                    </div>
-                    <div class="skill-group">
-                        <h4>Leadership and Management</h4>
-                        <p>Leadership 4.0 Track (Saint Paul – 228h), Professional Coach Certification (SLAC – 120h), PDC-Professional DISC (8h), Agile Methods (Scrum/Kanban).</p>
-                    </div>
-                    <div class="skill-group">
-                        <h4>Others</h4>
-                        <p>Communicative English (Wizard/UCDB), Order of DeMolay (Degree of Chevalier), SEBRAE Courses (Business Plan) and FGV (Strategic Management).</p>
-                    </div>
-                </div>
-            </section>
-
-        </main>
+        <p>I hold a Bachelor's degree in Business Administration (UCDB), with MBAs in Global Broker (IBMEC) and Data Science & Analytics (USP-ESALQ), CPA-10 certification, and complementary training in leadership, data, and product. Currently pursuing a degree in Systems Analysis and Software Engineering (Estácio). Based in Campo Grande, MS — Brazil.</p>
     </div>
+
+    <h2>Resources and Contact</h2>
+    <ul class="resources">
+        <li><a href="mailto:joaotomasvenancio@gmail.com">Email</a></li>
+        <li><a href="https://wa.me/5567992265673" target="_blank">WhatsApp</a></li>
+        <li><a href="https://www.linkedin.com/in/joao-tomas-martins-venancio/" target="_blank">LinkedIn</a></li>
+        <li><a href="https://github.com/codetradeai" target="_blank">GitHub</a></li>
+    </ul>
+
+    <h2>Artificial Intelligence and Legal Ops (2025–...)</h2>
+    <p>At <strong>Ernesto Borges Advogados</strong>, I lead Data, AI & Automation initiatives within the Legal Operations division. My goal is to scale complex legal operations through the technical implementation of LLMs and automation.</p>
+    <ul>
+        <li><strong>Legal RAG:</strong> Retrieval-Augmented Generation system in production over thousands of internal documents, with ingestion, chunking, and semantic retrieval using Pinecone and OpenAI.</li>
+        <li><strong>Process Mapping and Redesign:</strong> Optimization of critical operational workflows (post-registration, hearing minutes, signatures) via RPA and modular prompt architectures.</li>
+        <li><strong>Agile Management (Legal Ops):</strong> Delivery coordination in Azure DevOps, connecting legal needs, tech squads, and data infrastructure. Governance via KPIs and BI dashboards.</li>
+    </ul>
+
+    <h2>SaaS Products and AI Agents (2024–...)</h2>
+    <p>As Founder of <strong>C&T.AI</strong>, I focus on the design and autonomous implementation of data and AI solutions for Startups and SMEs.</p>
+    <ul>
+        <li><strong>Sherlock Stock (Insights):</strong> SaaS tool for B3 market and asset analysis. Integration with financial APIs to develop a "moat" through personalized user memory (React/TypeScript, Supabase, and n8n).</li>
+        <li><strong>Foco:</strong> Database architecture (Supabase) and UI/UX for a personal development app centered on high-performance mindset techniques for the user (Agent).</li>
+        <li><strong>SDR Agents:</strong> Autonomous conversational agents for WhatsApp integrated with n8n, Z-API, OpenAI, and CRMs for active lead qualification.</li>
+    </ul>
+
+    <h2>Financial Markets and Growth (2023–2024)</h2>
+    <p>Previously, I applied data analysis directly to business origination and systematic trading operations.</p>
+    <ul>
+        <li>At <strong>Nelogica</strong>, I led Growth and LTV strategies for the trading robots module, leveraging the active user base by 4x (+7,140 traders). I technically created and hosted the official automation community (+40k members, +80k views).</li>
+        <li>At <strong>CM Capital</strong>, I worked as a Direct Market Access (DMA) Analyst, focusing on the development and integration of algorithmic trading strategies (C# DLLs) for the financial market.</li>
+        <li>At <strong>Cubo Analítica</strong>, I led strategic partnerships and consulting projects focused on data and analytics.</li>
+    </ul>
+
+    <h2>Skills and Tools</h2>
+    <ul>
+        <li><strong>AI & Automation:</strong> n8n, LangChain, LangGraph, OpenAI API, Claude API, RAG Pipelines, Prompt Engineering, Pinecone, Supabase Vector.</li>
+        <li><strong>Development:</strong> Python, TypeScript, React, Node.js, SQL, PostgreSQL, REST APIs, Power Automate, C# (DLLs), Docker.</li>
+        <li><strong>Data & Analytics:</strong> Power BI, Pandas, Machine Learning, Scikit-learn, BRAPI, B3 Market Data.</li>
+        <li><strong>Fintech & Product:</strong> Systematic Trading (Nelogica/Profit), NTSL, DMA, Agile Methodologies (Scrum), Azure DevOps, Product Owner.</li>
+    </ul>
+
+    <h2>Education</h2>
+    <ul>
+        <li><strong>Systems Analysis and Software Engineering</strong> — Estácio (2025–2028)</li>
+        <li><strong>MBA in Data Science and Analytics</strong> — USP / ESALQ (400h)</li>
+        <li><strong>Global Broker MBA / InfoMoney</strong> — IBMEC (420h)</li>
+        <li><strong>Bachelor's in Business Administration</strong> — Universidade Católica Dom Bosco (UCDB)</li>
+        <li><strong>Postgraduate in Law</strong> — Focus on Civil Procedure (in progress)</li>
+        <li><strong>Data Science Training</strong> — DNC (520h) + Trading with Data (2024–2026)</li>
+        <li><strong>Reserve Officer (Cavalry)</strong> — NPOR / 20th RCB</li>
+    </ul>
+
+    <h2>Certifications</h2>
+    <ul>
+        <li><strong>Technology:</strong> Python Pandas & Statistics (Alura), Data Science & ML (Alura/DNC), Advanced Power BI & GA4, Big Data and Software Architecture Fundamentals.</li>
+        <li><strong>Market:</strong> CPA-10 ANBIMA, Technical Analysis (Saint Paul).</li>
+        <li><strong>Leadership:</strong> Leadership 4.0 Track (Saint Paul – 228h), Professional Coach (SLAC – 120h), PDC-Professional DISC, Agile Methods.</li>
+    </ul>
+
+    <h2>Background and Past Projects</h2>
+    <p>My foundation merges leadership, systems development, and tactical resilience.</p>
+    <ul>
+        <li><strong>Previous career:</strong> Relationship Assistant Level III (Nelogica, 2021–2022), Corporate Assistant and Teller (Sicoob, 2021; Uniprime, 2019), Apple B2B Specialist (iPlace, 2020), Managing Partner of a Cosmetics Industry (Ana Mattos / Ybá Cosméticos, 2015–2017).</li>
+        <li><strong>Military (2014):</strong> Reserve Officer Aspirant, Cavalry Branch (20th RCB – NPOR/Brazilian Army). An experience that consolidated discipline, leadership under pressure, and decision-making in uncertain scenarios.</li>
+        <li><strong>Sports:</strong> In my free time, I pursue high performance in Triathlon and CrossFit training.</li>
+    </ul>
+
+    <p class="closing">"Discipline is the bridge between goals and accomplishment."</p>
 
     <script>
         const themeToggleBtn = document.getElementById('theme-toggle');
@@ -562,7 +308,6 @@
             localStorage.setItem('theme', switchToTheme);
         });
 
-        // Clique na foto alterna entre as duas imagens
         if (profilePhoto) {
             profilePhoto.addEventListener('click', () => {
                 const isDefault = profilePhoto.src.endsWith('image_jt.jpg');
@@ -571,5 +316,4 @@
         }
     </script>
 </body>
-
 </html>
