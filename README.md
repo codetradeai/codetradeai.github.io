@@ -40,31 +40,6 @@ Não há build step nem dependências adicionais: basta abrir o `index.html` no 
 
 ---
 
-## Como rodar localmente
-
-1. Clone este repositório:
-
-   ```bash
-   git clone https://github.com/codetradeai/codetradeai.github.io.git
-   cd codetradeai.github.io
-   ```
-
-2. Abra o arquivo `index.html` diretamente no navegador  
-   *(clique duas vezes no arquivo ou use uma extensão de live server se preferir).*
-
----
-
-## Deploy
-
-O deploy é feito automaticamente pelo **GitHub Pages** a partir da branch `main`.
-
-- Tipo: **User site** (`codetradeai.github.io`)
-- URL: `https://codetradeai.github.io/`
-
-Qualquer alteração em `index.html` na branch `main` dispara uma nova publicação.
-
----
-
 ## Contato
 
 - GitHub: https://github.com/codetradeai  
