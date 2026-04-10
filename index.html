@@ -1,199 +1,262 @@
-Aqui está o código atualizado, transformando o seu currículo em uma **Landing Page de alto impacto**. 
-
-Utilizei o **Tailwind CSS** (via CDN, para funcionar imediatamente sem precisar instalar nada) para criar um design com o tema "Dark Mode" de alta tecnologia. Os textos foram reescritos utilizando técnicas de copywriting (com foco em métricas, soluções e conversão), reposicionando você de um candidato para um especialista e provedor de soluções. 
-
-Você pode copiar o código abaixo, salvar como `index.html` e abrir no navegador. *(Nota: As marcações de fontes `` foram mantidas no texto para referência da origem das informações e podem ser apagadas do seu arquivo final).*
-
-```html
 <!DOCTYPE html>
-<html lang="pt-BR" class="scroll-smooth">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>João Tomás Venâncio | AI & Automation Engineer</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        brand: {
-                            500: '#0ea5e9',
-                            600: '#0284c7',
-                        },
-                        dark: {
-                            900: '#0f172a',
-                            800: '#1e293b',
-                            700: '#334155',
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'system-ui', 'sans-serif'],
-                    }
-                }
+    <title>Currículo - João Tomás Martins Venâncio</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background-color: #f9f9f9;
+        }
+        .container {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin: 0;
+            color: #1a1a1a;
+            letter-spacing: -0.5px;
+        }
+        .subtitle {
+            font-size: 1.2em;
+            color: #666;
+            margin: 10px 0;
+            font-weight: 500;
+        }
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            font-size: 0.95em;
+            color: #555;
+            margin-top: 15px;
+        }
+        .contact-info a {
+            color: #0066cc;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .contact-info a:hover {
+            color: #004999;
+            text-decoration: underline;
+        }
+        h2 {
+            font-size: 1.4em;
+            color: #1a1a1a;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 8px;
+            margin-top: 35px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .item {
+            margin-bottom: 25px;
+        }
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 5px;
+        }
+        .item-title {
+            font-weight: 600;
+            font-size: 1.1em;
+            color: #222;
+        }
+        .item-company {
+            font-weight: 500;
+            color: #555;
+        }
+        .item-meta {
+            font-size: 0.9em;
+            color: #777;
+        }
+        ul {
+            margin: 0;
+            padding-left: 20px;
+            color: #444;
+        }
+        li {
+            margin-bottom: 6px;
+        }
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+        .skill-group strong {
+            display: block;
+            margin-bottom: 4px;
+            color: #333;
+        }
+        @media (max-width: 600px) {
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+            .item-header {
+                flex-direction: column;
             }
         }
-    </script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-        body { font-family: 'Inter', sans-serif; }
     </style>
 </head>
-<body class="bg-dark-900 text-slate-300 antialiased selection:bg-brand-500 selection:text-white">
+<body>
 
-    <nav class="fixed w-full bg-dark-900/90 backdrop-blur-md border-b border-dark-700 z-50">
-        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="text-white font-bold text-xl tracking-tighter">JT<span class="text-brand-500">.</span>AI</div>
-            <div class="space-x-6 text-sm font-medium">
-                <a href="#solucoes" class="hover:text-white transition">Soluções</a>
-                <a href="#experiencia" class="hover:text-white transition">Experiência</a>
-                <a href="https://wa.me/5567992265673" target="_blank" class="bg-brand-600 hover:bg-brand-500 text-white px-4 py-2 rounded-lg transition shadow-lg shadow-brand-500/30">Agendar Consultoria</a>
-            </div>
-        </div>
-    </nav>
-
-    <header class="pt-32 pb-20 px-6 max-w-6xl mx-auto flex flex-col items-center text-center">
-        <div class="inline-flex items-center space-x-2 bg-dark-800 border border-dark-700 rounded-full px-4 py-1.5 text-sm mb-8 text-brand-500 font-medium">
-            <span class="w-2 h-2 rounded-full bg-brand-500 animate-pulse"></span>
-            <span>Disponível para novos projetos</span>
-        </div>
-        <h1 class="text-5xl md:text-7xl font-bold text-white tracking-tight mb-6 leading-tight">
-            João Tomás M. Venâncio <br/>
-            <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-500 to-cyan-300">
-                AI Engineer & Founder 
-            </span>
-        </h1>
-        <p class="text-lg md:text-xl text-slate-400 max-w-2xl mb-10 leading-relaxed">
-            Especialista em inteligência artificial aplicada e automação de processos . Transformo fluxos operacionais complexos em sistemas inteligentes, escaláveis e autônomos utilizando RAG, Agentes de IA e arquiteturas modulares .
-        </p>
-        <div class="flex space-x-4">
-            <a href="https://github.com/codetradeai" target="_blank" class="border border-dark-700 hover:border-brand-500 bg-dark-800 hover:bg-dark-700 text-white px-6 py-3 rounded-lg font-medium transition flex items-center gap-2">
-                GitHub 
-            </a>
-            <a href="https://www.linkedin.com/in/joao-tomas-martins-venancio/" target="_blank" class="border border-dark-700 hover:border-brand-500 bg-dark-800 hover:bg-dark-700 text-white px-6 py-3 rounded-lg font-medium transition flex items-center gap-2">
-                LinkedIn 
-            </a>
+<div class="container">
+    <header>
+        <h1>João Tomás Martins Venâncio</h1> [cite: 36, 121]
+        <div class="subtitle">Founder & CEO · AI & Automation Engineer · Data Scientist · Product Owner</div> [cite: 37]
+        <div class="contact-info">
+            <span>Campo Grande, MS</span> [cite: 38, 127]
+            <span>|</span>
+            <span><a href="mailto:joaotomasvenancio@gmail.com">joaotomasvenancio@gmail.com</a></span> [cite: 38, 129]
+            <span>|</span>
+            <span>(67) 99226-5673</span> [cite: 38, 122]
+            <span>|</span>
+            <span><a href="https://www.linkedin.com/in/joao-tomas-martins-venancio/" target="_blank">LinkedIn</a></span> [cite: 38, 123]
+            <span>|</span>
+            <span><a href="https://github.com/codetradeai" target="_blank">GitHub</a></span>
         </div>
     </header>
 
-    <section class="border-y border-dark-700 bg-dark-800/50">
-        <div class="max-w-6xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-3 gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-dark-700">
-            <div class="p-4">
-                <div class="text-4xl font-bold text-white mb-2">99,35%</div>
-                <div class="text-sm text-slate-400">Precisão validada em RAG Jurídico </div>
+    <section>
+        <h2>Resumo Profissional</h2>
+        <p>Especialista em inteligência artificial aplicada, automação de processos e análise de dados. Experiência robusta em engenharia de prompt, desenvolvimento de pipelines RAG e implementação de soluções de IA para escritórios jurídicos e ambientes corporativos. Forte vivência no mercado financeiro (trading sistemático) e no desenvolvimento de arquiteturas de software modulares e aplicações escaláveis de alto impacto.</p> [cite: 48, 56, 116, 118]
+    </section>
+
+    <section>
+        <h2>Experiência Profissional</h2>
+
+        <div class="item">
+            <div class="item-header">
+                <span class="item-title">Data, AI & Automation | Diretoria de Operações</span> [cite: 55, 124]
+                <span class="item-meta">Abr/2025 – Atual | Campo Grande, MS</span> [cite: 55, 126, 127]
             </div>
-            <div class="p-4">
-                <div class="text-4xl font-bold text-white mb-2">4.500+</div>
-                <div class="text-sm text-slate-400">Documentos processados via LLM </div>
+            <div class="item-company">Ernesto Borges Advogados</div> [cite: 55, 125]
+            <ul>
+                <li>Liderança técnica do RAG Jurídico: pipeline de busca semântica com Pinecone + OpenAI sobre base de 4.500+ documentos jurídicos internos, com precisão validada de 99,35%. [cite: 56]</li>
+                <li>Desenvolvimento do MEMOCALC: motor de cálculo de liquidação de sentenças com correção monetária híbrida e integração a APIs do IBGE/BCB. [cite: 57]</li>
+                <li>Mapeamento e redesenho de fluxos operacionais jurídicos críticos via RPA e IA (Power Automate + LLMs). [cite: 58, 130, 131]</li>
+            </ul>
+        </div>
+
+        <div class="item">
+            <div class="item-header">
+                <span class="item-title">Founder & CEO</span> [cite: 47]
+                <span class="item-meta">Nov/2024 – Atual | Campo Grande, MS · Remoto</span> [cite: 47]
             </div>
-            <div class="p-4">
-                <div class="text-4xl font-bold text-white mb-2">4x</div>
-                <div class="text-sm text-slate-400">Crescimento de base ativa (7.140 usuários) </div>
+            <div class="item-company">C&T.AI — CODETRADE INTELIGÊNCIA, SISTEMAS E TECNOLOGIA LTDA</div> [cite: 47]
+            <ul>
+                <li>Fundação e operação de consultoria especializada em IA aplicada e automação de processos para PMEs. [cite: 48]</li>
+                <li>Desenvolvimento e entrega de agentes conversacionais de IA para WhatsApp Business integrados a CRMs e planilhas. [cite: 49]</li>
+                <li>Implementação de SDR Agent autônomo para qualificação de leads via fluxos em n8n. [cite: 51]</li>
+            </ul>
+        </div>
+
+        <div class="item">
+            <div class="item-header">
+                <span class="item-title">Business Partner</span> [cite: 62, 134]
+                <span class="item-meta">Nov/2024 – Atual | Remoto</span> [cite: 62, 136]
+            </div>
+            <div class="item-company">Cubo Analítica</div> [cite: 62, 135]
+            <ul>
+                <li>Parcerias estratégicas e projetos de consultoria em dados e analytics. [cite: 63, 138, 139]</li>
+            </ul>
+        </div>
+
+        <div class="item">
+            <div class="item-header">
+                <span class="item-title">Analista de Direct Market Access (DMA)</span> [cite: 64, 140]
+                <span class="item-meta">Jul/2024 – Out/2024 | São Paulo, SP</span> [cite: 64, 142, 143]
+            </div>
+            <div class="item-company">CM Capital</div> [cite: 64, 141]
+            <ul>
+                <li>Desenvolvimento e automação de estratégias de negociação algorítmica para o mercado financeiro (mini-índice e mini-dólar). [cite: 65, 66]</li>
+            </ul>
+        </div>
+
+        <div class="item">
+            <div class="item-header">
+                <span class="item-title">Customer Success Analyst II → Líder Beta</span> [cite: 67, 145]
+                <span class="item-meta">Jan/2023 – Mai/2024 | Porto Alegre, RS · Híbrido</span> [cite: 67, 147, 148]
+            </div>
+            <div class="item-company">Nelogica Sistemas de Software LTDA</div> [cite: 67, 146]
+            <ul>
+                <li>Liderança do módulo de automação/robôs para o varejo: crescimento de 4x na base, atingindo 7.140 traders ativos. [cite: 68, 165]</li>
+                <li>Criação da comunidade Nelogica focada em automação (+40.000 membros). [cite: 69, 166]</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2>Projetos em Destaque</h2>
+        <ul>
+            <li><strong>Sherlock Stock (Insights):</strong> Ferramenta SaaS de análise de mercado e ativos B3. Integração em tempo real com APIs financeiras, desenvolvimento de "moat" através de memória de usuário personalizada e funções em React/TypeScript, Supabase e n8n. [cite: 81, 82, 83]</li>
+            <li><strong>Foco (App de Desenvolvimento Pessoal):</strong> Idealização e arquitetura de banco de dados e UI/UX de um aplicativo focado em técnicas de mentalidade de alta performance para o usuário (Agente).</li>
+            <li><strong>Triunfe Performance Hub:</strong> Sistema de BPO e treinamento para atletas, integrando dados de dispositivos vestíveis (APIs da Garmin/Strava) a análises conduzidas por IA.</li>
+            <li><strong>RAG Jurídico (Ernesto Borges):</strong> Sistema de Retrieval-Augmented Generation sobre base de milhares de documentos, com ingestão, chunking e recuperação semântica utilizando Pinecone e OpenAI. [cite: 85, 86, 87]</li>
+            <li><strong>WhatsApp AI Sales Agents:</strong> Agentes de IA autônomos para qualificação de leads integrados ao n8n, Z-API, OpenAI e CRMs, atuando ativamente como SDRs. [cite: 88, 89, 90]</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Competências e Ferramentas</h2>
+        <div class="skills-grid">
+            <div class="skill-group">
+                <strong>IA & Automação</strong>
+                n8n, LangChain, LangGraph, OpenAI API, Claude API, RAG Pipelines, Prompt Engineering, Pinecone, Supabase Vector. [cite: 40]
+            </div>
+            <div class="skill-group">
+                <strong>Desenvolvimento</strong>
+                Python, TypeScript, React, Node.js, SQL, PostgreSQL, REST APIs, Power Automate, C# (DLLs), Docker. [cite: 41]
+            </div>
+            <div class="skill-group">
+                <strong>Dados & Analytics</strong>
+                Power BI, Pandas, Machine Learning, Scikit-learn, BRAPI, B3 Market Data. [cite: 42]
+            </div>
+            <div class="skill-group">
+                <strong>Fintech & Produto</strong>
+                Systematic Trading (Nelogica/Profit), NTSL, DMA, Metodologias Ágeis (Scrum), Azure DevOps, Product Owner. [cite: 43, 44]
             </div>
         </div>
     </section>
 
-    <section id="solucoes" class="py-24 px-6 max-w-6xl mx-auto">
-        <div class="mb-16">
-            <h2 class="text-3xl font-bold text-white mb-4">Projetos & Soluções Construídas</h2>
-            <p class="text-slate-400">Arquiteturas desenvolvidas para escalar negócios e simplificar decisões.</p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div class="bg-dark-800 border border-dark-700 rounded-2xl p-8 hover:border-brand-500 transition group">
-                <div class="bg-dark-700 w-12 h-12 rounded-lg flex items-center justify-center mb-6 text-2xl group-hover:bg-brand-500/20 group-hover:text-brand-500 transition">⚖️</div>
-                <h3 class="text-xl font-bold text-white mb-3">RAG Jurídico (Pinecone + OpenAI)</h3>
-                <p class="text-slate-400 text-sm mb-4">Sistema de Retrieval-Augmented Generation sobre base documental. Pipeline de ingestão, chunking e recuperação semântica integrada a sistemas processuais .</p>
-                <div class="flex flex-wrap gap-2">
-                    <span class="px-2 py-1 bg-dark-900 border border-dark-700 rounded text-xs font-medium text-slate-300">Pinecone</span>
-                    <span class="px-2 py-1 bg-dark-900 border border-dark-700 rounded text-xs font-medium text-slate-300">OpenAI </span>
-                    <span class="px-2 py-1 bg-dark-900 border border-dark-700 rounded text-xs font-medium text-slate-300">Python </span>
-                </div>
-            </div>
-
-            <div class="bg-dark-800 border border-dark-700 rounded-2xl p-8 hover:border-brand-500 transition group">
-                <div class="bg-dark-700 w-12 h-12 rounded-lg flex items-center justify-center mb-6 text-2xl group-hover:bg-brand-500/20 group-hover:text-brand-500 transition">📈</div>
-                <h3 class="text-xl font-bold text-white mb-3">Sherlock Stock SaaS</h3>
-                <p class="text-slate-400 text-sm mb-4">Plataforma de análise B3. Integração serverless com BRAPI, rastreamento de indicadores macro e arquitetura orientada a dados com construção de moat via memória do usuário .</p>
-                <div class="flex flex-wrap gap-2">
-                    <span class="px-2 py-1 bg-dark-900 border border-dark-700 rounded text-xs font-medium text-slate-300">React + TS</span>
-                    <span class="px-2 py-1 bg-dark-900 border border-dark-700 rounded text-xs font-medium text-slate-300">Supabase </span>
-                    <span class="px-2 py-1 bg-dark-900 border border-dark-700 rounded text-xs font-medium text-slate-300">n8n </span>
-                </div>
-            </div>
-
-            <div class="bg-dark-800 border border-dark-700 rounded-2xl p-8 hover:border-brand-500 transition group">
-                <div class="bg-dark-700 w-12 h-12 rounded-lg flex items-center justify-center mb-6 text-2xl group-hover:bg-brand-500/20 group-hover:text-brand-500 transition">🧠</div>
-                <h3 class="text-xl font-bold text-white mb-3">Foco</h3>
-                <p class="text-slate-400 text-sm mb-4">Aplicativo de desenvolvimento pessoal estruturado para condicionar a mentalidade de alta performance. Interface e fluxos arquitetados especificamente para o Agente interagir com o ecossistema.</p>
-                <div class="flex flex-wrap gap-2">
-                    <span class="px-2 py-1 bg-dark-900 border border-dark-700 rounded text-xs font-medium text-slate-300">UI/UX</span>
-                    <span class="px-2 py-1 bg-dark-900 border border-dark-700 rounded text-xs font-medium text-slate-300">High-Performance</span>
-                </div>
-            </div>
-
-            <div class="bg-dark-800 border border-dark-700 rounded-2xl p-8 hover:border-brand-500 transition group">
-                <div class="bg-dark-700 w-12 h-12 rounded-lg flex items-center justify-center mb-6 text-2xl group-hover:bg-brand-500/20 group-hover:text-brand-500 transition">💬</div>
-                <h3 class="text-xl font-bold text-white mb-3">SDR Agents (WhatsApp)</h3>
-                <p class="text-slate-400 text-sm mb-4">Agentes autônomos para qualificação de leads via WhatsApp. Fluxos de follow-up integrados com Z-API, OpenAI e CRMs, atuando ativamente em vendas para PMEs .</p>
-                <div class="flex flex-wrap gap-2">
-                    <span class="px-2 py-1 bg-dark-900 border border-dark-700 rounded text-xs font-medium text-slate-300">n8n </span>
-                    <span class="px-2 py-1 bg-dark-900 border border-dark-700 rounded text-xs font-medium text-slate-300">Z-API </span>
-                    <span class="px-2 py-1 bg-dark-900 border border-dark-700 rounded text-xs font-medium text-slate-300">LangChain </span>
-                </div>
-            </div>
-        </div>
+    <section>
+        <h2>Formação Acadêmica</h2>
+        <ul>
+            <li><strong>MBA em Data Science e Analytics</strong> — USP / ESALQ (400h) [cite: 92, 204]</li>
+            <li><strong>MBA Broker Global / InfoMoney</strong> — IBMEC (420h) [cite: 94, 205]</li>
+            <li><strong>Bacharel em Administração</strong> — Universidade Católica Dom Bosco (UCDB) [cite: 96, 206]</li>
+            <li><strong>Pós-Graduação em Direito</strong> — Foco em Processo Civil (em curso)</li>
+            <li><strong>Formação em Dados</strong> — DNC Group (520h) [cite: 98, 220]</li>
+        </ul>
     </section>
 
-    <section id="experiencia" class="py-24 px-6 max-w-4xl mx-auto border-t border-dark-700">
-        <h2 class="text-3xl font-bold text-white mb-12">Histórico Operacional</h2>
-        
-        <div class="space-y-12 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:ml-[8.5rem] md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-dark-700 before:to-transparent">
-            
-            <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
-                <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-dark-900 bg-brand-500 text-slate-300 shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow shadow-brand-500/50 z-10"></div>
-                <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-dark-800 p-6 rounded-2xl border border-dark-700">
-                    <div class="text-brand-500 font-bold text-sm mb-1">Abr/2025 – Atual </div>
-                    <h3 class="text-white font-bold text-lg">Diretoria de Operações | Data & AI </h3>
-                    <div class="text-slate-400 text-sm mb-3">Ernesto Borges Advogados </div>
-                    <p class="text-slate-400 text-sm">Liderança técnica na construção de pipelines RAG , motores de cálculo via API (MEMOCALC) e automação de extração de dados jurídicos escaláveis .</p>
-                </div>
-            </div>
-
-            <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
-                <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-dark-900 bg-dark-700 text-slate-300 shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10"></div>
-                <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-dark-800 p-6 rounded-2xl border border-dark-700">
-                    <div class="text-brand-500 font-bold text-sm mb-1">Nov/2024 – Atual </div>
-                    <h3 class="text-white font-bold text-lg">Founder & CEO </h3>
-                    <div class="text-slate-400 text-sm mb-3">C&T.AI </div>
-                    <p class="text-slate-400 text-sm">Operação de consultoria de IA aplicada. Entrega de agentes autônomos para o varejo, estruturação de dashboards de BI e modelagem de negócios PME .</p>
-                </div>
-            </div>
-
-            <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
-                <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-dark-900 bg-dark-700 text-slate-300 shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10"></div>
-                <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-dark-800 p-6 rounded-2xl border border-dark-700">
-                    <div class="text-brand-500 font-bold text-sm mb-1">Jan/2023 – Mai/2024 </div>
-                    <h3 class="text-white font-bold text-lg">Líder Beta | Customer Success </h3>
-                    <div class="text-slate-400 text-sm mb-3">Nelogica </div>
-                    <p class="text-slate-400 text-sm">Gestão de automação para o varejo, expansão da base ativa de robôs para 7.140 traders e criação de comunidade engajada com +40.000 membros .</p>
-                </div>
-            </div>
-
-        </div>
+    <section>
+        <h2>Certificações</h2>
+        <ul>
+            <li>CPA-10 — ANBIMA [cite: 103, 224]</li>
+            <li>Trilha Liderança 4.0 — Saint Paul Escola de Negócios (228h) [cite: 100, 219]</li>
+            <li>Formação Data Science, Regressão Linear, Python Pandas — Alura [cite: 109, 110, 261]</li>
+            <li>Professional Coach Certification — SLAC (120h) [cite: 108, 215]</li>
+            <li>PMP, Scrum Safety Master (SSM) e Lean Six Sigma Green Belt — (Em andamento) [cite: 104, 105, 106]</li>
+        </ul>
     </section>
 
-    <footer class="border-t border-dark-700 bg-dark-900 pb-12 pt-20 text-center">
-        <h2 class="text-3xl font-bold text-white mb-6">Pronto para automatizar a sua operação?</h2>
-        <a href="https://wa.me/5567992265673" target="_blank" class="inline-block bg-brand-600 hover:bg-brand-500 text-white font-bold px-8 py-4 rounded-xl transition shadow-lg shadow-brand-500/30 mb-12">
-            Fale Comigo no WhatsApp
-        </a>
-        <div class="text-slate-500 text-sm">
-            Campo Grande, MS • joaotomasvenancio@gmail.com • (67) 99226-5673 
-        </div>
-    </footer>
-
+</div>
 </body>
 </html>
-```
