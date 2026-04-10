@@ -103,7 +103,8 @@
             padding: 80px 40px 60px 40px;
             position: sticky;
             top: 0;
-            height: 100vh;
+            height: max-content;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
             border-right: 1px solid var(--border-dark);
@@ -141,7 +142,7 @@
             display: flex;
             flex-direction: column;
             gap: 16px;
-            margin-top: auto;
+            margin-top: 48px;
             font-size: 0.95rem;
         }
 
@@ -269,6 +270,17 @@
         }
 
         /* Responsividade para Celulares e Tablets */
+        @media (max-width: 992px) {
+            .sidebar {
+                width: 40%;
+                padding: 60px 30px;
+            }
+            .main-content {
+                width: 60%;
+                padding: 60px 40px;
+            }
+        }
+
         @media (max-width: 768px) {
             .layout {
                 flex-direction: column;
@@ -291,7 +303,7 @@
             }
 
             .contact-links {
-                justify-content: center;
+                align-items: center;
             }
 
             .main-content {
