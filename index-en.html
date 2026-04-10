@@ -309,9 +309,14 @@
         });
 
         if (profilePhoto) {
+            const savedPhoto = localStorage.getItem('profilePhoto');
+            if (savedPhoto) profilePhoto.src = savedPhoto;
+
             profilePhoto.addEventListener('click', () => {
                 const isDefault = profilePhoto.src.endsWith('image_jt.jpg');
-                profilePhoto.src = isDefault ? 'image_jt_2.JPG' : 'image_jt.jpg';
+                const newSrc = isDefault ? 'image_jt_2.JPG' : 'image_jt.jpg';
+                profilePhoto.src = newSrc;
+                localStorage.setItem('profilePhoto', newSrc);
             });
         }
     </script>
