@@ -564,7 +564,7 @@
         // Clique na foto alterna entre as duas imagens
         if (profilePhoto) {
             profilePhoto.addEventListener('click', () => {
-                const isDefault = profilePhoto.src.includes('image_jt.jpg');
+                const isDefault = profilePhoto.src.endsWith('image_jt.jpg');
                 profilePhoto.src = isDefault ? 'image_jt_2.JPG' : 'image_jt.jpg';
             });
         }
