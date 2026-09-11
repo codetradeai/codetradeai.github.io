@@ -238,6 +238,7 @@
             document.documentElement.setAttribute('data-theme', 'dark');
         }
     </script>
+    <link rel="stylesheet" href="assets/motion.css?v=1">
 </head>
 
 <body>
@@ -259,7 +260,7 @@
     <h1>João Tomás M. Venâncio</h1>
 
     <div class="intro">
-        <img id="profile-photo" src="assets/image_jt.jpg" alt="João Tomás Venâncio" class="profile-img">
+        <img id="profile-photo" src="assets/image_jt.jpg" alt="João Tomás Venâncio" class="profile-img" role="button" tabindex="0" aria-label="Trocar foto de perfil">
 
         <p>Bem-vindo(a)! Aqui você encontra um pouco sobre mim e o que tenho construído.</p>
 
@@ -362,6 +363,9 @@
         });
 
         if (profilePhoto) {
+            profilePhoto.addEventListener('keydown', event => {
+                if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); profilePhoto.click(); }
+            });
             const savedPhoto = localStorage.getItem('profilePhoto');
             if (savedPhoto) profilePhoto.src = savedPhoto;
 

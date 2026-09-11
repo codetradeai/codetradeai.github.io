@@ -201,6 +201,7 @@
             document.documentElement.setAttribute('data-theme', 'dark');
         }
     </script>
+    <link rel="stylesheet" href="assets/motion.css?v=1">
 </head>
 <body>
 
@@ -215,7 +216,7 @@
     <h1>João Tomás M. Venâncio</h1>
 
     <div class="intro">
-        <img id="profile-photo" src="assets/image_jt.jpg" alt="João Tomás Venâncio" class="profile-img">
+        <img id="profile-photo" src="assets/image_jt.jpg" alt="João Tomás Venâncio" class="profile-img" role="button" tabindex="0" aria-label="Change profile photo">
 
         <p>Welcome! Here you can find a bit about myself and the stuff I have been building.</p>
 
@@ -308,6 +309,9 @@
         });
 
         if (profilePhoto) {
+            profilePhoto.addEventListener('keydown', event => {
+                if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); profilePhoto.click(); }
+            });
             const savedPhoto = localStorage.getItem('profilePhoto');
             if (savedPhoto) profilePhoto.src = savedPhoto;
 

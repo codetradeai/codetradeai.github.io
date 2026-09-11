@@ -1,0 +1,12 @@
+/* Subtle feedback while preserving the portfolio typography and palette. */
+:root { --motion-fast: 150ms; }
+body, p, li, h1, h2, a, .ctrl-btn, .closing, .meta { transition: color 180ms ease, background-color 180ms ease, border-color 180ms ease; }
+a:focus-visible, button:focus-visible, .profile-img:focus-visible { outline: 2px solid var(--link); outline-offset: 4px; }
+.ctrl-btn { min-width: 44px; min-height: 44px; transition: color var(--motion-fast) ease, background-color var(--motion-fast) ease, border-color var(--motion-fast) ease, transform var(--motion-fast) ease; }
+.ctrl-btn:active { transform: scale(.96); }
+a:not(.ctrl-btn) { text-decoration: underline; text-decoration-color: transparent; text-underline-offset: 3px; transition: color var(--motion-fast) ease, text-decoration-color var(--motion-fast) ease; }
+a:not(.ctrl-btn):is(:hover, :focus-visible) { text-decoration-color: currentColor; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+  .ctrl-btn:active { transform: none; }
+}
