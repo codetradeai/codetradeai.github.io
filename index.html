@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>João Tomás M. Venâncio | Portfólio</title><link rel="icon" type="image/png" href="assets/favicon.png">
+    <title>João Tomás M. Venâncio | Portfólio</title><link rel="icon" type="image/svg+xml" href="assets/favicon-esmeralda.svg">
     <meta name="description"
         content="Gestão, dados e tecnologia aplicada. Entregas em processos, análise operacional, sites, automação e IA.">
     <style>
@@ -14,9 +14,9 @@
             --bg: #ffffff;
             --text: #24292f;
             --muted: #57606a;
-            --link: #0969da;
+            --link: #047857;
             --border: #d0d7de;
-            --heading: #0550ae;
+            --heading: #065f46;
             --hover-bg: #f6f8fa;
         }
 
@@ -24,9 +24,9 @@
             --bg: #0d1117;
             --text: #c9d1d9;
             --muted: #8b949e;
-            --link: #58a6ff;
+            --link: #34d399;
             --border: #30363d;
-            --heading: #79c0ff;
+            --heading: #6ee7b7;
             --hover-bg: #161b22;
         }
 
@@ -239,7 +239,7 @@
         }
     </script>
     <link rel="stylesheet" href="assets/motion.css?v=1">
-</head>
+<style>@font-face{font-family:"Space Grotesk";src:url('assets/space-grotesk-latin.woff2') format('woff2');font-weight:300 700;font-display:swap;}body{font-family:"Space Grotesk",system-ui,sans-serif;}h1{letter-spacing:-.045em;line-height:1.1;font-size:clamp(2rem,5vw,3.6rem);}.profile-img{cursor:default;border-color:var(--link);object-fit:cover;}.resources a{border-color:var(--border);}:focus-visible{outline:2px solid var(--link);outline-offset:4px;}</style></head>
 
 <body>
 
@@ -260,7 +260,7 @@
     <h1>João Tomás M. Venâncio</h1>
 
     <div class="intro">
-        <img id="profile-photo" src="assets/image_jt.jpg" alt="João Tomás Venâncio" class="profile-img" role="button" tabindex="0" aria-label="Trocar foto de perfil">
+        <img id="profile-photo" src="assets/jt-codetrade-esmeralda.webp" alt="João Tomás Venâncio" class="profile-img">
 
         <p>Bem-vindo(a)! Aqui você encontra um pouco sobre mim e o que tenho construído.</p>
 
@@ -275,8 +275,9 @@
     <ul class="resources">
         <li><a href="https://codetrade.me/">Consultoria C&amp;T.AI</a></li>
         <li><a href="mailto:joao@codetrade.me">E-mail</a></li>
-        <li><a href="https://wa.me/5567992265673" target="_blank" rel="noopener">WhatsApp</a></li>
+        <li><a href="https://wa.me/5551994483251" target="_blank" rel="noopener">WhatsApp</a></li>
         <li><a href="https://www.linkedin.com/in/joao-tomas-martins-venancio/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://www.instagram.com/codetrade.me/" target="_blank" rel="noopener">@codetrade.me</a></li>
         <li><a href="https://github.com/codetradeai" target="_blank" rel="noopener">GitHub</a></li>
     </ul>
 
@@ -362,20 +363,6 @@
             localStorage.setItem('theme', switchToTheme);
         });
 
-        if (profilePhoto) {
-            profilePhoto.addEventListener('keydown', event => {
-                if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); profilePhoto.click(); }
-            });
-            const savedPhoto = localStorage.getItem('profilePhoto');
-            if (savedPhoto) profilePhoto.src = savedPhoto;
-
-            profilePhoto.addEventListener('click', () => {
-                const isDefault = profilePhoto.src.endsWith('assets/image_jt.jpg');
-                const newSrc = isDefault ? 'assets/image_jt_2.JPG' : 'assets/image_jt.jpg';
-                profilePhoto.src = newSrc;
-                localStorage.setItem('profilePhoto', newSrc);
-            });
-        }
     </script>
 </body>
 
