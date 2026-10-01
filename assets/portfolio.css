@@ -1,0 +1,65 @@
+/* Project highlights extend the existing emerald portfolio identity. */
+.positioning {
+    color: var(--heading);
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 1.5;
+    margin: -8px 0 24px;
+}
+
+.section-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 20px;
+    margin: 24px 0;
+    font-size: 14px;
+}
+
+.section-links a {
+    padding: 6px 0;
+}
+
+.project-card {
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--link);
+    border-radius: 8px;
+    padding: 22px 24px;
+    margin: 0 0 18px;
+    scroll-margin-top: 84px;
+}
+
+.project-card h3 {
+    font-size: 19px;
+    font-weight: 600;
+    line-height: 1.4;
+    margin-bottom: 12px;
+}
+
+.project-card p {
+    margin-bottom: 12px;
+}
+
+.project-card .project-stack {
+    font-size: 13px;
+    color: var(--muted);
+}
+
+.project-card .project-status {
+    padding-top: 12px;
+    border-top: 1px solid var(--border);
+    font-size: 13px;
+    color: var(--muted);
+}
+
+.project-card > :last-child {
+    margin-bottom: 0;
+}
+
+#projetos, #entregas, #contato {
+    scroll-margin-top: 84px;
+}
+
+@media (max-width: 600px) {
+    .project-card { padding: 18px; }
+    .positioning { font-size: 16px; }
+}
