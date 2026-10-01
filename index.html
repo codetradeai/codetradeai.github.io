@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>João Tomás M. Venâncio | Portfólio</title><link rel="icon" type="image/svg+xml" href="assets/favicon-esmeralda.svg">
     <meta name="description"
-        content="Gestão, dados e tecnologia aplicada. Entregas em processos, análise operacional, sites, automação e IA.">
+        content="João Tomás: consultoria em gestão, dados e desenvolvimento de aplicações. Projetos de CRM, energia solar, sites, automação e IA.">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
@@ -239,6 +239,7 @@
         }
     </script>
     <link rel="stylesheet" href="assets/motion.css?v=1">
+    <link rel="stylesheet" href="assets/portfolio.css?v=1">
 <style>@font-face{font-family:"Space Grotesk";src:url('assets/space-grotesk-latin.woff2') format('woff2');font-weight:300 700;font-display:swap;}body{font-family:"Space Grotesk",system-ui,sans-serif;}h1{letter-spacing:-.045em;line-height:1.1;font-size:clamp(2rem,5vw,3.6rem);}.profile-img{cursor:default;border-color:var(--link);object-fit:cover;}.resources a{border-color:var(--border);}:focus-visible{outline:2px solid var(--link);outline-offset:4px;}</style></head>
 
 <body>
@@ -258,20 +259,27 @@
     </div>
 
     <h1>João Tomás M. Venâncio</h1>
+    <p class="positioning">Consultoria em gestão, dados e desenvolvimento de aplicações</p>
 
     <div class="intro">
         <img id="profile-photo" src="assets/jt-codetrade-esmeralda.webp" alt="João Tomás Venâncio" class="profile-img">
 
-        <p>Bem-vindo(a)! Aqui você encontra um pouco sobre mim e o que tenho construído.</p>
+        <p>Transformo necessidades da operação em processos, análises e aplicações.</p>
 
-        <p>Sou fundador da <strong>C&amp;T.AI</strong>. Ajudo empresas a organizar a operação, compreender seus dados e colocar melhorias em prática. Conecto gestão e tecnologia por meio de processos, indicadores, sites, automações, integrações e soluções com inteligência artificial.</p>
+        <p>Sou fundador da <strong>C&amp;T.AI</strong>. Atuo no diagnóstico de problemas de negócio e no desenvolvimento das soluções: organizo dados, desenho processos e construo sites, sistemas, automações e integrações com inteligência artificial.</p>
 
         <p>Sou Bacharel em Administração (UCDB), com MBAs em Broker Global (IBMEC) e Data Science & Analytics
             (USP-ESALQ), certificação CPA-10, e formações complementares em liderança, dados e produto. Graduando em ADS
             e Engenharia de Software (Estácio). Resido em Campo Grande, MS.</p>
     </div>
 
-    <h2>Recursos e Contato</h2>
+    <nav class="section-links" aria-label="Seções do portfólio">
+        <a href="#projetos">Projetos em destaque</a>
+        <a href="#entregas">Outras entregas</a>
+        <a href="#contato">Contato</a>
+    </nav>
+
+    <h2 id="contato">Recursos e Contato</h2>
     <ul class="resources">
         <li><a href="https://codetrade.me/">Consultoria C&amp;T.AI</a></li>
         <li><a href="mailto:joao@codetrade.me">E-mail</a></li>
@@ -283,8 +291,37 @@
 
     <h2>Gestão, Dados e Tecnologia Aplicada</h2>
     <p>Pela <strong>C&amp;T.AI</strong>, conecto diagnóstico e execução: organizo informações, estruturo processos e desenvolvo a solução adequada ao problema. Atuo diretamente do entendimento da operação à implementação e ao acompanhamento das entregas.</p>
-    <p class="meta">Projetos apresentados por setor. Os nomes de clientes e empregadores foram preservados; cada descrição distingue a entrega de projeções e achados de diagnóstico.</p>
-    <h2>Trabalhos e entregas</h2>
+    <p class="meta">Produtos próprios são identificados pelo nome; projetos de clientes são apresentados por setor. Preservo nomes de clientes e empregadores e separo o que foi desenvolvido de resultados de negócio ainda não medidos.</p>
+
+    <section aria-labelledby="projetos">
+        <h2 id="projetos">Projetos em destaque</h2>
+        <article class="project-card" aria-labelledby="projeto-chat">
+            <h3 id="projeto-chat">codetrade.chat · CRM de WhatsApp</h3>
+            <p>Uma aplicação para reunir atendimento, contatos e acompanhamento comercial no WhatsApp.</p>
+            <p><strong>Minha atuação:</strong> desenvolvimento da aplicação, dos fluxos de atendimento e CRM e das integrações com WhatsApp e IA.</p>
+            <p><strong>Entrega técnica:</strong> inbox para atendimento humano e IA, funil de negócios, campanhas por template, automações, painel de resultados e integração MCP para assistentes.</p>
+            <p class="project-stack"><strong>Tecnologias:</strong> TypeScript, React, Supabase/PostgreSQL, Cloud API da Meta e MCP.</p>
+            <p class="project-status"><strong>Etapa:</strong> módulos implementados, com configurações externas e validação de ponta a ponta ainda em andamento.</p>
+        </article>
+        <article class="project-card" aria-labelledby="projeto-solar">
+            <h3 id="projeto-solar">CodeSolar · CRM e propostas de energia solar</h3>
+            <p>Uma aplicação para organizar o trabalho comercial de integradores de energia solar, da leitura da conta de energia à proposta.</p>
+            <p><strong>Minha atuação:</strong> desenvolvimento dos fluxos de clientes, negócios e propostas, com leitura de faturas por IA e integração com assistentes.</p>
+            <p><strong>Entrega técnica:</strong> CRM com funil, propostas compartilháveis por link, leitura assistida de contas de energia e ferramentas MCP para consultar e operar dados da aplicação.</p>
+            <p class="project-stack"><strong>Tecnologias:</strong> TypeScript, React, Supabase/PostgreSQL, IA e MCP.</p>
+            <p class="project-status"><strong>Etapa:</strong> aplicação publicada, com validações de integrações em evolução. Adoção e impacto comercial não foram mensurados neste portfólio.</p>
+        </article>
+        <article class="project-card" aria-labelledby="projeto-servicos">
+            <h3 id="projeto-servicos">Rede de serviços · Site para múltiplas unidades</h3>
+            <p>Uma presença digital que organiza a marca, os serviços e as informações de cada unidade.</p>
+            <p><strong>Minha atuação:</strong> desenvolvimento do site responsivo, organização do conteúdo e implementação das páginas locais e dos fluxos de contato.</p>
+            <p><strong>Entrega técnica:</strong> páginas por unidade, blog, metadados e dados estruturados para SEO, recursos de acessibilidade, encaminhamento ao agendamento e formulário de candidatura.</p>
+            <p class="project-stack"><strong>Tecnologias:</strong> Next.js, React, TypeScript e CSS responsivo.</p>
+            <p class="project-status"><strong>Escopo:</strong> site e fluxos implementados; o agendamento acontece nos canais externos da rede. O case não atribui aumento de tráfego ou conversão à entrega.</p>
+        </article>
+    </section>
+
+    <h2 id="entregas">Outros trabalhos e entregas</h2>
     <ul>
         <li><strong>Varejo — Consulta a vendas, estoque e recebíveis do ERP.</strong> Para consultar informações do sistema de gestão, construí uma integração que recebe perguntas em linguagem natural e acessa vendas, caixa, estoque e contas a receber. <strong>Integração de consulta ao sistema existente.</strong> O cruzamento entre relatórios e registros do banco também identificou uma divergência documental para conferência.</li>
         <li><strong>Serviços — Análise de vendas e retorno de clientes.</strong> Reuni históricos dispersos de clientes, profissionais, serviços e vendas para analisar o desempenho e a frequência de retorno dos clientes. <strong>Relatórios com variações de receita e frequência.</strong> As análises organizaram os achados para a gestão avaliar onde investigar e quais ações priorizar.</li>

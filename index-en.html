@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>João Tomás M. Venâncio | Portfolio</title><link rel="icon" type="image/svg+xml" href="assets/favicon-esmeralda.svg">
-    <meta name="description" content="Management, data and applied technology. Deliverables in processes, operational analysis, websites, automation and AI.">
+    <meta name="description" content="João Tomás: consulting in management, data and application development. CRM, solar energy, websites, automation and AI projects.">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
@@ -202,6 +202,7 @@
         }
     </script>
     <link rel="stylesheet" href="assets/motion.css?v=1">
+    <link rel="stylesheet" href="assets/portfolio.css?v=1">
 <style>@font-face{font-family:"Space Grotesk";src:url('assets/space-grotesk-latin.woff2') format('woff2');font-weight:300 700;font-display:swap;}body{font-family:"Space Grotesk",system-ui,sans-serif;}h1{letter-spacing:-.045em;line-height:1.1;font-size:clamp(2rem,5vw,3.6rem);}.profile-img{cursor:default;border-color:var(--link);object-fit:cover;}.resources a{border-color:var(--border);}:focus-visible{outline:2px solid var(--link);outline-offset:4px;}</style></head>
 <body>
 
@@ -214,18 +215,25 @@
     </div>
 
     <h1>João Tomás M. Venâncio</h1>
+    <p class="positioning">Consulting in management, data and application development</p>
 
     <div class="intro">
         <img id="profile-photo" src="assets/jt-codetrade-esmeralda.webp" alt="João Tomás Venâncio" class="profile-img">
 
-        <p>Welcome! Here you can find a bit about myself and the stuff I have been building.</p>
+        <p>I turn operational needs into processes, analysis and applications.</p>
 
-        <p>I am the founder of <strong>C&amp;T.AI</strong>. I help companies organize operations, understand their data and implement improvements. I connect management and technology through processes, indicators, websites, automation, integrations and AI solutions.</p>
+        <p>I am the founder of <strong>C&amp;T.AI</strong>. I work on diagnosing business problems and developing solutions: organizing data, designing processes and building websites, systems, automation and AI integrations.</p>
 
         <p>I hold a Bachelor's degree in Business Administration (UCDB), with MBAs in Global Broker (IBMEC) and Data Science & Analytics (USP-ESALQ), CPA-10 certification, and complementary training in leadership, data, and product. Currently pursuing a degree in Systems Analysis and Software Engineering (Estácio). Based in Campo Grande, MS — Brazil.</p>
     </div>
 
-    <h2>Resources and Contact</h2>
+    <nav class="section-links" aria-label="Portfolio sections">
+        <a href="#projetos">Featured projects</a>
+        <a href="#entregas">Other deliverables</a>
+        <a href="#contato">Contact</a>
+    </nav>
+
+    <h2 id="contato">Resources and Contact</h2>
     <ul class="resources">
         <li><a href="https://codetrade.me/">C&amp;T.AI consulting</a></li>
         <li><a href="mailto:joao@codetrade.me">Email</a></li>
@@ -237,8 +245,37 @@
 
     <h2>Management, Data and Applied Technology</h2>
     <p>Through <strong>C&amp;T.AI</strong>, I connect diagnosis and delivery: organizing information, structuring processes and building solutions around the business problem. I work directly from understanding operations through implementation and follow-up.</p>
-    <p class="meta">Projects are presented by sector. Client and employer names are withheld; each description distinguishes deliverables from projections and diagnostic findings.</p>
-    <h2>Work and deliverables</h2>
+    <p class="meta">Own products are identified by name; client projects are presented by sector. I withhold client and employer names and distinguish what was developed from business results that have not yet been measured.</p>
+
+    <section aria-labelledby="projetos">
+        <h2 id="projetos">Featured projects</h2>
+        <article class="project-card" aria-labelledby="projeto-chat">
+            <h3 id="projeto-chat">codetrade.chat · WhatsApp CRM</h3>
+            <p>An application that brings together customer service, contacts and sales follow-up on WhatsApp.</p>
+            <p><strong>My role:</strong> application development, customer-service and CRM workflows, and WhatsApp and AI integrations.</p>
+            <p><strong>Technical deliverable:</strong> a human and AI inbox, sales pipeline, template campaigns, automations, a results dashboard and MCP integration for assistants.</p>
+            <p class="project-stack"><strong>Technologies:</strong> TypeScript, React, Supabase/PostgreSQL, Meta Cloud API and MCP.</p>
+            <p class="project-status"><strong>Stage:</strong> modules implemented, with external configuration and end-to-end validation still in progress.</p>
+        </article>
+        <article class="project-card" aria-labelledby="projeto-solar">
+            <h3 id="projeto-solar">CodeSolar · Solar energy CRM and proposals</h3>
+            <p>An application for solar installers to organize sales work, from reading the electricity bill to preparing a proposal.</p>
+            <p><strong>My role:</strong> development of customer, deal and proposal workflows, with AI-assisted bill reading and assistant integration.</p>
+            <p><strong>Technical deliverable:</strong> a CRM pipeline, proposals shared by link, assisted electricity-bill reading and MCP tools to query and work with application data.</p>
+            <p class="project-stack"><strong>Technologies:</strong> TypeScript, React, Supabase/PostgreSQL, AI and MCP.</p>
+            <p class="project-status"><strong>Stage:</strong> application published, with integration validation ongoing. Adoption and commercial impact have not been measured for this portfolio.</p>
+        </article>
+        <article class="project-card" aria-labelledby="projeto-servicos">
+            <h3 id="projeto-servicos">Service network · Multi-location website</h3>
+            <p>A digital presence that organizes the brand, services and information for each location.</p>
+            <p><strong>My role:</strong> responsive website development, content organization, location pages and contact workflows.</p>
+            <p><strong>Technical deliverable:</strong> location pages, a blog, SEO metadata and structured data, accessibility features, booking referrals and a job application form.</p>
+            <p class="project-stack"><strong>Technologies:</strong> Next.js, React, TypeScript and responsive CSS.</p>
+            <p class="project-status"><strong>Scope:</strong> website and workflows implemented; bookings take place through the network's external channels. This case does not attribute traffic or conversion gains to the delivery.</p>
+        </article>
+    </section>
+
+    <h2 id="entregas">Other work and deliverables</h2>
     <ul>
         <li><strong>Retail — Sales, inventory and receivables queries.</strong> Built an integration that accepts natural-language questions and queries sales, cash, inventory and receivables in the existing business management system. <strong>An integration for querying the existing system.</strong> Cross-checking reports and database records also identified a document discrepancy for review.</li>
         <li><strong>Services — Sales and repeat-customer analysis.</strong> Consolidated fragmented customer, professional, service and sales histories to analyze performance and repeat visits. <strong>Reports identifying changes in revenue and visit frequency.</strong> The findings were organized for management to assess where to investigate and which actions to prioritize.</li>
